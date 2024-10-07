@@ -17,44 +17,49 @@ import com.example.travel_app.databinding.ViewholderRecommendedBinding;
 import java.util.ArrayList;
 
 public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.ViewHolder> {
-    private ArrayList<ItemDomain> items;
-    private Context context;
-
+     ArrayList<ItemDomain> items;
+     Context context;
+    ViewholderRecommendedBinding binding;
     public RecommendedAdapter(ArrayList<ItemDomain> items) {
         this.items = items;
     }
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        ViewholderRecommendedBinding binding = ViewholderRecommendedBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
+    public RecommendedAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+       binding = ViewholderRecommendedBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false);
         context = parent.getContext();
         return new ViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ItemDomain item = items.get(position); // Lấy item tại vị trí hiện tại
+       // ItemDomain item = items.get(position); // Lấy item tại vị trí hiện tại
 
-        holder.binding.titleTxt.setText(item.getTitle());
-        holder.binding.priceTxt.setText("$" + item.getPrice());
-        holder.binding.addressTxt.setText(item.getAddress());
-        holder.binding.scoreTxt.setText("" + item.getScore());
+        binding.titleTxt.setText(items.get(position).getTitle());
+        binding.priceTxt.setText("$" + items.get(position).getPrice());
+        binding.addressTxt.setText(items.get(position).getAddress());
+        binding.scoreTxt.setText("" + items.get(position).getScore());
+
+//        holder.binding.titleTxt.setText(item.getTitle());
+//        holder.binding.priceTxt.setText("$" + item.getPrice());
+//        holder.binding.addressTxt.setText(item.getAddress());
+//        holder.binding.scoreTxt.setText("" + item.getScore());
 
         Glide.with(context)
-                .load(item.getPic())
-                .into(holder.binding.pic);
+                .load(items.get(position).getPic())
+                .into(binding.pic);
 
         // Xử lý sự kiện khi item được nhấn
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                int currentPosition = holder.getAdapterPosition(); // Lấy vị trí chính xác tại thời điểm bấm
-                if (currentPosition != RecyclerView.NO_POSITION) {
+            public void onClick(View v) {
+//                int currentPosition = holder.getAdapterPosition(); // Lấy vị trí chính xác tại thời điểm bấm
+//                if (currentPosition != RecyclerView.NO_POSITION) {
                     Intent intent = new Intent(context, DetailActivity.class);
-                    intent.putExtra("object", items.get(currentPosition)); // Truyền dữ liệu item sang DetailActivity
+                    intent.putExtra("object", items.get(position)); // Truyền dữ liệu item sang DetailActivity
                     context.startActivity(intent);
-                }
+         //       }
             }
         });
     }
@@ -65,11 +70,10 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        ViewholderRecommendedBinding binding;
 
         public ViewHolder(ViewholderRecommendedBinding binding) {
             super(binding.getRoot());
-            this.binding = binding;
+
         }
     }
 }

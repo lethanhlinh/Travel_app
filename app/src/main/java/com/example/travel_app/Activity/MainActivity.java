@@ -82,7 +82,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
-                    for (DataSnapshot issue: snapshot.getChildren()){
+                    for (DataSnapshot issue:snapshot.getChildren()){
                         list.add(issue.getValue(ItemDomain.class));
                     }
                     if(!list.isEmpty()){
