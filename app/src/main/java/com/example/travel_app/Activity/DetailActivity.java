@@ -13,7 +13,7 @@ import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityDetailBinding;
 import com.example.travel_app.databinding.ActivityMainBinding;
 
-public class DetailActivity extends BaseActivity {
+public class DetailActivity extends AppCompatActivity {
     ActivityDetailBinding binding;
     private ItemDomain object;
 
@@ -29,8 +29,8 @@ public class DetailActivity extends BaseActivity {
 
     private void setVariable() {
         binding.titleTxt.setText(object.getTitle());
-        binding.priceTxt.setText(object.getPrice());
-        binding.backBtn.setOnClickListener(v -> finish());
+        binding.priceTxt.setText("$"+object.getPrice());
+      binding.backBtn.setOnClickListener(v -> finish());
         binding.bedTxt.setText("" + object.getBed());
         binding.durationTxt.setText(object.getDuration());
         binding.distanceTxt.setText(object.getDistance());
