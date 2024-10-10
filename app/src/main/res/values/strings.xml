@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Travel_app</string>
-    <string name="introTitle">Explorer the<font color="#3f95ec"> World</font> with us</string>
-    <string name="subIntro">Discover paradise on Earth!\n
-        Our pristine beaches offer crystal-clear waters, soft golden sands, and breathtaking sunsets</string>
+    <string name="introTitle">Khám Phá <font color="#3f95ec">Thế Giới</font> cùng chúng tôi</string>
+    <string name="subIntro">Khám phá thiên đường trên Trái đất!\n
+Những bãi biển nguyên sơ của chúng tôi có làn nước trong vắt, bãi cát vàng mềm mại và cảnh hoàng hôn ngoạn mục</string>
 </resources>

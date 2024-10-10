@@ -1,8 +1,10 @@
 package com.example.travel_app.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,10 +22,12 @@ import com.example.travel_app.Domain.Location;
 import com.example.travel_app.Domain.SliderItems;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.util.ArrayList;
 
@@ -35,6 +39,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         initLocation();
         initBanner();
@@ -52,12 +57,12 @@ public class MainActivity extends BaseActivity {
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()){
-                    for (DataSnapshot issue: snapshot.getChildren()){
+                if (snapshot.exists()) {
+                    for (DataSnapshot issue : snapshot.getChildren()) {
                         list.add(issue.getValue(ItemDomain.class));
                     }
-                    if(!list.isEmpty()){
-                        binding.recyclerViewPopular.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL,false));
+                    if (!list.isEmpty()) {
+                        binding.recyclerViewPopular.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
                         RecyclerView.Adapter adapter = new PopularAdapter(list);
                         binding.recyclerViewPopular.setAdapter(adapter);
                     }
@@ -71,6 +76,8 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+
 
     private void initRecommended() {
         DatabaseReference myRef = database.getReference("Item");
