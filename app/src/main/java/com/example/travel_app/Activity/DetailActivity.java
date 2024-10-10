@@ -42,7 +42,6 @@ public class DetailActivity extends BaseActivity {
         Glide.with(DetailActivity.this)
                 .load(object.getPic())
                 .into(binding.pic);
-
         binding.addToCartBtn.setOnClickListener(view -> {
             Intent intent = new Intent(DetailActivity.this, TicketActivity.class);
             intent.putExtra("object", object);
