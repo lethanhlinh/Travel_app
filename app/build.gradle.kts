@@ -44,7 +44,6 @@ android {
 }
 
 dependencies {
-    implementation ("com.ismaeldivita.chipnavigation:chipnavigation:2.0.1") // Kiểm tra phiên bản mới nhất trên GitHub
 
     implementation(libs.appcompat)
     implementation(libs.material)
