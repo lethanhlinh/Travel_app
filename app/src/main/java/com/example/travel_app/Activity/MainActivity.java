@@ -78,34 +78,6 @@ public class MainActivity extends BaseActivity {
     }
 
 
-    // Khởi tạo ChipNavigationBar
-    ChipNavigationBar chipNavigationBar = findViewById(R.id.thanhmenu); // Đảm bảo rằng bạn đã sử dụng đúng ID
-
-    // Gán sự kiện cho ChipNavigationBar
-        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener()
-
-    {
-        @Override
-        public void onItemSelected ( int id){
-        switch (id) {
-            case R.id.explorer:
-                // Xử lý chuyển đến trang chính
-                // Bạn có thể sử dụng Fragment hoặc Activity khác
-                break;
-
-            case R.id.cart:
-                // Xử lý chuyển đến trang yêu thích
-                break;
-
-            case R.id.profile:
-                // Mở ProfileActivity khi nhấn vào "Cá Nhân"
-                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
-                startActivity(intent);
-                break;
-        }
-    }
-    });
-
 
     private void initRecommended() {
         DatabaseReference myRef = database.getReference("Item");
