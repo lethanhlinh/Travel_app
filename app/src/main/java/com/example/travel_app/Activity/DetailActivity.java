@@ -13,7 +13,7 @@ import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityDetailBinding;
 import com.example.travel_app.databinding.ActivityMainBinding;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends BaseActivity {
     ActivityDetailBinding binding;
     private ItemDomain object;
 
@@ -30,7 +30,7 @@ public class DetailActivity extends AppCompatActivity {
     private void setVariable() {
         binding.titleTxt.setText(object.getTitle());
         binding.priceTxt.setText("$"+object.getPrice());
-      binding.backBtn.setOnClickListener(v -> finish());
+        binding.backBtn.setOnClickListener(v -> finish());
         binding.bedTxt.setText("" + object.getBed());
         binding.durationTxt.setText(object.getDuration());
         binding.distanceTxt.setText(object.getDistance());
@@ -42,11 +42,11 @@ public class DetailActivity extends AppCompatActivity {
         Glide.with(DetailActivity.this)
                 .load(object.getPic())
                 .into(binding.pic);
-        binding.addToCartBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-  //             Intent intent = new Intent(DetailActivity.this,);
-            }
+
+        binding.addToCartBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(DetailActivity.this, TicketActivity.class);
+            intent.putExtra("object", object);
+            startActivity(intent);
         });
     }
 
