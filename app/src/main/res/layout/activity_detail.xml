@@ -82,7 +82,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="24dp"
-                            android:text="title"
+                            android:text="Tiêu đề"
                             android:textAlignment="center"
                             android:textColor="@color/darkBlue"
                             android:textSize="24sp"
@@ -106,7 +106,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:text="address"
+                                android:text="Địa chỉ"
                                 android:textColor="@color/darkBlue"
                                 android:textSize="16sp" />
                         </LinearLayout>
@@ -138,7 +138,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_vertical"
-                                android:text="0"
+                                android:text="3"
                                 android:textSize="16sp" />
                         </LinearLayout>
 
@@ -160,7 +160,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="16dp"
-                                    android:text="- min"
+                                    android:text="- phút"
                                     android:textColor="@color/darkBlue"
                                     android:textStyle="bold"
                                     app:layout_constraintEnd_toEndOf="parent"
@@ -183,7 +183,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
-                                    android:text="Duration"
+                                    android:text="Thời gian"
                                     android:textColor="@color/darkBlue"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -231,7 +231,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
-                                    android:text="Distance"
+                                    android:text="Khoảng cách"
                                     android:textColor="@color/darkBlue"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -279,7 +279,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_margin="8dp"
-                                    android:text="Bed"
+                                    android:text="Giường ngủ"
                                     android:textColor="@color/darkBlue"
                                     app:layout_constraintEnd_toEndOf="parent"
                                     app:layout_constraintStart_toStartOf="parent"
@@ -294,7 +294,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="16dp"
-                            android:text="Description"
+                            android:text="Mô tả"
                             android:textColor="@color/darkBlue"
                             android:textSize="20sp"
                             android:textStyle="bold" />
@@ -306,7 +306,7 @@
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="24dp"
-                            android:text="Travel opens the door to new experiences, cultures, and adventures. It offers a chance to explore, learn, and create lasting memories, while stepping out of your routine and embracing the unknown."
+                            android:text="Du lịch mở ra cánh cửa cho những trải nghiệm mới, văn hóa mới và những cuộc phiêu lưu. Nó mang đến cơ hội khám phá, học hỏi và tạo ra những kỷ niệm lâu dài, đồng thời bước ra khỏi thói quen hàng ngày và đón nhận điều chưa biết."
                             android:textColor="@color/darkBlue"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -331,7 +331,7 @@
             style="@android:style/Widget.Button"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:text="Add to cart"
+            android:text="Thanh toán"
             android:background="@drawable/blue_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -354,7 +354,7 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" /Person"
+            android:text=" /Người"
             android:textColor="@color/darkBlue"
             app:layout_constraintBottom_toBottomOf="@+id/priceTxt"
             app:layout_constraintStart_toEndOf="@+id/priceTxt"
