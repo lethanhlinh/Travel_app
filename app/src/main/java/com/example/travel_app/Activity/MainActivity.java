@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -22,18 +22,16 @@ import com.example.travel_app.Domain.Location;
 import com.example.travel_app.Domain.SliderItems;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityMainBinding;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
-
+    private TextView txt6;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +40,14 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_signup);
 
 
+        txt6 = findViewById(R.id.textView6);
+        txt6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, SeeAllActivity.class ));
+
+            }
+        });
         initLocation();
         initBanner();
         initCategory();
@@ -191,4 +197,6 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+
 }

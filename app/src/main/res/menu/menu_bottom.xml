@@ -8,7 +8,13 @@
     app:cnb_backgroundColor ="@color/blue"
     app:cnb_iconColor="@color/white"
     />
-
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/bottom_btn2"
+        android:title="Khám phá"
+        app:cnb_backgroundColor ="@color/blue"
+        app:cnb_iconColor="@color/white"
+        />
 
     <item
         android:id="@+id/cart"

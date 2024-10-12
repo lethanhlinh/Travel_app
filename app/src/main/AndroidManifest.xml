@@ -13,17 +13,18 @@
         android:theme="@style/Theme.Travel_app"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.SeeAllActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.TicketActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.DetailActivity"
             android:exported="true" />
-
         <activity
             android:name=".Activity.BaseActivity"
             android:exported="false" />
-        <activity android:name=".Activity.ProfileActivity"/>
-
+        <activity android:name=".Activity.ProfileActivity" />
         <activity
             android:name=".Activity.IntroActivity"
             android:exported="true">
