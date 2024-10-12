@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/nentravelapp">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Travel App"
+        android:textSize="40sp"
+        android:textColor="#1D82E4"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="160dp"
+        android:padding="16dp"
+        android:background="@android:color/white"
+        android:layout_marginHorizontal="24dp"
+        android:clipToPadding="false"
+        android:paddingBottom="30dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="HỌ TÊN"
+            android:textColor="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editTexthoten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Quan_Linh_Viet"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/edit_text_background" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EMAIL"
+            android:textColor="@android:color/darker_gray" />
+
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="youremail@example.com"
+            android:padding="10dp"
+            android:inputType="textEmailAddress"
+            android:background="@drawable/edit_text_background" />
+
+        <!-- Trường Số Điện Thoại -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SỐ ĐIỆN THOẠI"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0123456789"
+            android:padding="10dp"
+            android:inputType="phone"
+            android:background="@drawable/edit_text_background" />
+
+        <!-- Trường Mật Khẩu -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PASSWORD"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="********"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_background" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONFILM PASSWORD"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/editTextfPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="********"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_text_background" />
+
+
+        <Button
+            android:id="@+id/buttonSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIGN UP"
+            android:background="@drawable/rounded_button"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tôi đã có tài khoản! SIGN IN"
+            android:textColor="@android:color/darker_gray"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="141dp"
+
+        android:layout_marginTop="660dp"
+        android:layout_marginEnd="140dp"
+        android:gravity="center"
+        android:text="Đăng nhập với "
+        android:textSize="24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image_facebook"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_fb"
+            android:contentDescription="Facebook"
+            android:layout_marginEnd="16dp" />
+
+        <ImageView
+            android:id="@+id/image_google"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_gg"
+            android:contentDescription="Google"
+            android:layout_marginEnd="16dp" />
+
+        <ImageView
+            android:id="@+id/image_yahoo"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_zalo"
+            android:contentDescription="Yahoo" />
+    </LinearLayout>
+</RelativeLayout>
