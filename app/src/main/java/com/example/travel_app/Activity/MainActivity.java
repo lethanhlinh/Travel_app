@@ -37,7 +37,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setContentView(R.layout.activity_signup);
 
 
         txt6 = findViewById(R.id.textView6);
