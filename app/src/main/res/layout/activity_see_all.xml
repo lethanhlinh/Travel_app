@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/seeall"
-    android:background="@color/white"
+    android:background="@color/lightBlue"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Activity.SeeAllActivity">
@@ -19,47 +19,82 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-
+                android:layout_marginTop="48dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
                 android:layout_height="match_parent">
 
                 <ImageView
                     android:id="@+id/backBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="48dp"
-                    app:layout_constraintEnd_toStartOf="@+id/editTextText"
-                    app:layout_constraintHorizontal_bias="0.41"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/back" />
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/bell_icon" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vị trí"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/locationSp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="@+id/textView3"
+                    app:layout_constraintStart_toStartOf="@+id/textView3"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content">
+
+
                 <EditText
                     android:id="@+id/editTextText"
-                    android:layout_width="276dp"
-                    android:layout_height="46dp"
+                    android:layout_width="303dp"
+                    android:layout_height="43dp"
+                    android:layout_marginTop="8dp"
                     android:background="#00ffffff"
                     android:drawableStart="@drawable/search_icon"
                     android:drawablePadding="8dp"
                     android:ems="10"
                     android:hint="Đường phố, Địa chỉ, Thành phố..."
-                    android:inputType="text"
 
+                    android:inputType="text"
                     android:padding="8dp"
                     android:textColor="@color/darkBlue"
                     android:textColorHint="@color/darkBlue"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView4" />
+                    app:layout_constraintEnd_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toTopOf="parent" />
 
 
                 <TextView
                     android:id="@+id/textView4"
                     android:layout_width="85dp"
                     android:layout_height="42dp"
-                    android:layout_marginTop="48dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="4dp"
-                    android:layout_marginBottom="2dp"
                     android:background="@drawable/blue_bg"
                     android:gravity="center"
                     android:text="Tìm Kiếm"

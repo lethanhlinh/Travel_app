@@ -2,6 +2,7 @@ package com.example.travel_app.Activity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.travel_app.Adapter.RecommendedAdapter;
 import com.example.travel_app.Adapter.SeeAllAdapter;
 import com.example.travel_app.Domain.ItemDomain;
+import com.example.travel_app.Domain.Location;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivitySeeAllBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -30,9 +32,34 @@ public class SeeAllActivity extends BaseActivity {
         setContentView(binding.getRoot());
 
         initItem();
+        initLocation();
         imgBack = findViewById(R.id.backBtn);
-
+        binding.backBtn.setOnClickListener(v -> finish());
     }
+
+    private void initLocation() {
+        DatabaseReference myRef =database.getReference("Location");
+        ArrayList<Location> list = new ArrayList<>();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    for (DataSnapshot issue:snapshot.getChildren()){
+                        list.add(issue.getValue(Location.class));
+                    }
+                    ArrayAdapter<Location> adapter = new ArrayAdapter<>(SeeAllActivity.this, R.layout.sp_item,list);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    binding.locationSp.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
     private void initItem(){
         DatabaseReference myRef = database.getReference("Item");
         binding.progressBarPopular.setVisibility(View.VISIBLE);
@@ -60,5 +87,7 @@ public class SeeAllActivity extends BaseActivity {
 
             }
         });
+
+
     }
 }
