@@ -10,8 +10,10 @@ import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityDetailBinding;
 import com.example.travel_app.databinding.ActivityIntroBinding;
 import com.example.travel_app.databinding.ActivitySigninBinding;
+import com.google.android.material.tabs.TabLayout;
 
 public class SignInActivity extends AppCompatActivity {
+
     private ActivitySigninBinding binding;
     //Khai báo user o day
     protected void onCreate(Bundle savedInstanceState) {

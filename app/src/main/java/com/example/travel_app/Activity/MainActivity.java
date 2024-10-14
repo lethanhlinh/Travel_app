@@ -47,6 +47,7 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 //----------------------------------------------
       //  scrollView = findViewById(R.id.scrollView);
         chipNavigationBar = findViewById(R.id.thanhmenu);
