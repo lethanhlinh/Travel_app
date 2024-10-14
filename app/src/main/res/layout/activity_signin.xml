@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
@@ -66,24 +67,45 @@
             android:layout_marginTop="10dp"
             android:layout_gravity="end" />
 
-        <Button
-            android:id="@+id/buttonSignIn"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:text="Bạn chưa có tài khoản?"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/btnSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/text_SignUp"
+                android:background="?attr/selectableItemBackground"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/textView14"
+                app:layout_constraintStart_toEndOf="@+id/textView14"
+                app:layout_constraintTop_toTopOf="@+id/textView14" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SIGN IN"
-            android:background="@drawable/rounded_button"
+            android:background="@drawable/btn_lightblue_bg"
             android:textColor="@android:color/white"
             android:layout_marginTop="20dp"
             android:padding="10dp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bạn chưa có tài khoản ? SIGN UP"
-            android:textColor="@android:color/darker_gray"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            />
 
     </LinearLayout>
 
@@ -108,27 +130,33 @@
         android:layout_marginBottom="20dp"
         android:gravity="center">
 
-        <ImageView
-            android:id="@+id/image_facebook"
-            android:layout_width="100dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGoogle"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_fb"
-            android:contentDescription="Facebook"
-            android:layout_marginEnd="16dp" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/btn_lightblue_bg"
+            android:drawableLeft="@drawable/ic_google"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Google"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            />
 
-        <ImageView
-            android:id="@+id/image_google"
-            android:layout_width="100dp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnFacebook"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_gg"
-            android:contentDescription="Google"
-            android:layout_marginEnd="16dp" />
-
-        <ImageView
-            android:id="@+id/image_yahoo"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_zalo"
-            android:contentDescription="Yahoo" />
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/btn_lightblue_bg"
+            android:drawableLeft="@drawable/ic_facebook"
+            android:drawablePadding="10dp"
+            android:paddingLeft="20dp"
+            android:text="Facebook"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"/>
     </LinearLayout>
 </RelativeLayout>
