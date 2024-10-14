@@ -5,4 +5,6 @@
 Những bãi biển nguyên sơ của chúng tôi có làn nước trong vắt, bãi cát vàng mềm mại và cảnh hoàng hôn ngoạn mục</string>
     <string name="text_SignUp"><u>Sign up</u></string>
     <string name="text_SignIn"><u>Sign in</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

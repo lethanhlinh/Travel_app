@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 
@@ -16,29 +19,58 @@ import com.example.travel_app.Adapter.CategoryAdapter;
 import com.example.travel_app.Adapter.PopularAdapter;
 import com.example.travel_app.Adapter.RecommendedAdapter;
 import com.example.travel_app.Adapter.SliderAdapter;
+import com.example.travel_app.Adapter.ViewPagerAdapter;
 import com.example.travel_app.Domain.Category;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.Domain.Location;
 import com.example.travel_app.Domain.SliderItems;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
+import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
     ActivityMainBinding binding;
     private TextView txt6;
+
+   // private ScrollView scrollView;
+    private ChipNavigationBar chipNavigationBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+//----------------------------------------------
+      //  scrollView = findViewById(R.id.scrollView);
+        chipNavigationBar = findViewById(R.id.thanhmenu);
+        //ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        //scrollView.
+//---------------------------------------------------------------
 
 
+        chipNavigationBar.setOnItemSelectedListener(new ChipNavigationBar.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(int id) {
+
+                    if (id == R.id.explorer) {
+
+                    } else if (id == R.id.favorites) {
+
+                    } else if (id == R.id.cart) {
+
+                    } else if (id == R.id.profile) {
+                        startActivity(new Intent(MainActivity.this, ProfileActivity.class ));
+                    }
+
+                }
+        });
         txt6 = findViewById(R.id.textView6);
         txt6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -196,6 +228,8 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
+
+
 
 
 }
