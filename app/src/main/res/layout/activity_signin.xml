@@ -33,7 +33,7 @@
             android:textColor="@android:color/darker_gray" />
 
         <EditText
-            android:id="@+id/editTextEmail"
+            android:id="@+id/emailTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="youremail@example.com"
@@ -49,7 +49,7 @@
             android:layout_marginTop="16dp"/>
 
         <EditText
-            android:id="@+id/editTextPassword"
+            android:id="@+id/passWordTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="********"
