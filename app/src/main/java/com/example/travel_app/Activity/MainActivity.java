@@ -39,6 +39,7 @@ public class MainActivity extends BaseActivity {
         setContentView(binding.getRoot());
 
 
+
         txt6 = findViewById(R.id.textView6);
         txt6.setOnClickListener(new View.OnClickListener() {
             @Override
