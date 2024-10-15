@@ -3,4 +3,8 @@
     <string name="introTitle">Khám Phá <font color="#3f95ec">Thế Giới</font> cùng chúng tôi</string>
     <string name="subIntro">Khám phá thiên đường trên Trái đất!\n
 Những bãi biển nguyên sơ của chúng tôi có làn nước trong vắt, bãi cát vàng mềm mại và cảnh hoàng hôn ngoạn mục</string>
+    <string name="text_SignUp"><u>Đăng kí</u></string>
+    <string name="text_SignIn"><u>Đăng nhập</u></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
