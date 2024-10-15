@@ -47,7 +47,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:contentDescription="Heart icon"
-                    android:src="@drawable/fav_icon" />
+                    android:src="@drawable/ic_heart_default" />
             </LinearLayout>
 
             <LinearLayout

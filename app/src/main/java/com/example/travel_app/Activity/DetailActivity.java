@@ -1,6 +1,9 @@
 package com.example.travel_app.Activity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +19,7 @@ import com.example.travel_app.databinding.ActivityMainBinding;
 public class DetailActivity extends BaseActivity {
     ActivityDetailBinding binding;
     private ItemDomain object;
+    private boolean isFavorite = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +51,28 @@ public class DetailActivity extends BaseActivity {
             intent.putExtra("object", object);
             startActivity(intent);
         });
+
+        binding.likeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isFavorite){
+                    binding.likeBtn.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+                    addFavorite(object);
+                }else {
+                    binding.likeBtn.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+                    removeFavorite(object);
+                }
+                isFavorite = !isFavorite;
+            }
+        });
+    }
+
+    private void removeFavorite(ItemDomain object) {
+
+    }
+
+    private void addFavorite(ItemDomain object) {
+
     }
 
     private void getIntentExtra() {
