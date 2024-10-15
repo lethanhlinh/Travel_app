@@ -24,7 +24,7 @@
         android:orientation="vertical"
         android:layout_marginTop="160dp"
         android:padding="16dp"
-        android:background="@android:color/white"
+
         android:layout_marginHorizontal="24dp"
         android:clipToPadding="false"
         android:paddingBottom="30dp">
@@ -32,8 +32,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="HỌ TÊN"
-            android:textColor="@android:color/darker_gray" />
+            android:text="Họ và tên"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/hoTenTxt"
@@ -46,8 +46,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="EMAIL"
-            android:textColor="@android:color/darker_gray" />
+            android:text="Email"
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/emailTxt"
@@ -62,8 +62,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="SỐ ĐIỆN THOẠI"
-            android:textColor="@android:color/darker_gray"
+            android:text="Số điện thoại"
+            android:textColor="@color/white"
             android:layout_marginTop="16dp"/>
 
         <EditText
@@ -79,8 +79,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PASSWORD"
-            android:textColor="@android:color/darker_gray"
+            android:text="Password"
+            android:textColor="@color/white"
             android:layout_marginTop="16dp"/>
 
         <EditText
@@ -95,8 +95,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CONFILM PASSWORD"
-            android:textColor="@android:color/darker_gray"
+            android:text="Confirm Password"
+            android:textColor="@color/white"
             android:layout_marginTop="16dp"/>
 
         <EditText

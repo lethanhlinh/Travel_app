@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="200dp"
-        android:background="@android:color/white"
+
         android:clipToPadding="false"
         android:orientation="vertical"
         android:padding="16dp"
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên đăng nhập"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@android:color/white" />
 
         <EditText
             android:id="@+id/emailTxt"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Mật khẩu"
-            android:textColor="@android:color/darker_gray" />
+            android:textColor="@color/white" />
 
         <EditText
             android:id="@+id/passWordTxt"
@@ -117,14 +117,14 @@
     <TextView
         android:id="@+id/textView23"
         android:layout_width="247dp"
-        android:layout_height="68dp"
+        android:layout_height="60dp"
         android:layout_below="@+id/linearLayout"
         android:layout_alignStart="@+id/linearLayout"
 
         android:layout_alignEnd="@+id/linearLayout"
-        android:layout_marginStart="58dp"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="58dp"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="59dp"
         android:gravity="center"
         android:text="Hoặc đăng nhập với "
         android:textColor="#000000"
@@ -138,9 +138,9 @@
         android:layout_alignEnd="@+id/textView23"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="-82dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="-81dp"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="90dp"
         android:gravity="center"
         android:orientation="horizontal">
 
