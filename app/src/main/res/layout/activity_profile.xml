@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="16dp"
+        android:background="#90C3F4"
         tools:layout_editor_absoluteX="170dp"
         tools:layout_editor_absoluteY="48dp">
 

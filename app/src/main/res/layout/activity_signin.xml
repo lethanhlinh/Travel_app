@@ -42,7 +42,7 @@
             android:background="@drawable/edit_text_background"
             android:hint="Nhập tên đăng nhập"
             android:inputType="textEmailAddress"
-            android:padding="10dp" /> <!-- Nên tạo một drawable cho EditText -->
+            android:padding="10dp" />
 
         <TextView
             android:layout_width="match_parent"
