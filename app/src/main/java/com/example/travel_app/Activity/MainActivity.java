@@ -65,7 +65,7 @@ public class MainActivity extends BaseActivity {
                     } else if (id == R.id.favorites) {
 
                     } else if (id == R.id.cart) {
-
+                        startActivity(new Intent(MainActivity.this, FavoriteActivity.class ));
                     } else if (id == R.id.profile) {
                         startActivity(new Intent(MainActivity.this, ProfileActivity.class ));
                     }

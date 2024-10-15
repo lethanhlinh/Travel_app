@@ -2,7 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activity.FavoriteActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,7 +34,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#F2BBBB"
+                    android:backgroundTint="#EB1717"
                     android:gravity="center"
                     android:paddingLeft="20dp"
                     android:paddingRight="20dp"
@@ -57,7 +59,7 @@
                 android:weightSum="3">
 
                 <ImageView
-                    android:layout_width="20dp"
+                    android:layout_width="16dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:contentDescription="Menu icon"
@@ -74,7 +76,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="30dp"
                     android:layout_height="60dp"
                     android:layout_weight="1"
                     android:contentDescription="Delete icon"
@@ -101,6 +103,7 @@
                     android:layout_weight="2"
                     android:contentDescription="Tour Image"
                     android:scaleType="centerCrop"
+                    android:src="@drawable/banahill"
                     android:background="@color/white" />
 
                 <LinearLayout
@@ -112,7 +115,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Cố Đô Huế"
+                        android:text="Bà Nà Hills"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -145,6 +148,7 @@
                     android:layout_weight="2"
                     android:contentDescription="Tour Image"
                     android:scaleType="centerCrop"
+                    android:src="@drawable/balibeach"
                     android:background="@color/white" />
 
                 <LinearLayout
@@ -156,7 +160,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Thành Cổ Quảng Trị"
+                        android:text="Biển Bali"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
@@ -189,6 +193,7 @@
                     android:layout_weight="2"
                     android:contentDescription="Tour Image"
                     android:scaleType="centerCrop"
+                    android:src="@drawable/item_3"
                     android:background="@color/white" />
 
                 <LinearLayout
@@ -200,7 +205,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Quốc Tử Giám"
+                        android:text="Đảo Phú Quốc"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
