@@ -55,7 +55,7 @@ public class DetailActivity extends BaseActivity {
         binding.likeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isFavorite){
+                if(!isFavorite){
                     binding.likeBtn.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
                     addFavorite(object);
                 }else {
