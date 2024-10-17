@@ -17,6 +17,7 @@ public class ItemDomain implements Serializable{
     private int bed;
     private String distance;
     private double score;
+    private boolean isFavorite;
 
     public ItemDomain() {
     }
@@ -131,5 +132,13 @@ public class ItemDomain implements Serializable{
 
     public void setScore(double score) {
         this.score = score;
+    }
+
+    public boolean isFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        isFavorite = favorite;
     }
 }

@@ -2,33 +2,29 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <item
-    android:id="@+id/explorer"
+    android:id="@+id/menu_home"
     android:icon="@drawable/bottom_btn1"
     android:title="Trang Chủ"
-    app:cnb_backgroundColor ="@color/blue"
     app:cnb_iconColor="@color/white"
     />
     <item
-        android:id="@+id/favorites"
+        android:id="@+id/menu_location"
         android:icon="@drawable/bottom_btn2"
         android:title="Khám phá"
-        app:cnb_backgroundColor ="@color/blue"
         app:cnb_iconColor="@color/white"
         />
 
     <item
-        android:id="@+id/cart"
+        android:id="@+id/menu_favorites"
         android:icon="@drawable/bottom_btn3"
         android:title="Yêu Thích"
-        app:cnb_backgroundColor ="@color/blue"
         app:cnb_iconColor="@color/white"
         />
 
     <item
-        android:id="@+id/profile"
+        android:id="@+id/menu_profile"
         android:icon="@drawable/bottom_btn4"
         android:title="Cá Nhân"
-        app:cnb_backgroundColor ="@color/blue"
         app:cnb_iconColor="@color/white"
         />
 </menu>

@@ -3,11 +3,22 @@
     android:height="36dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
-    <path
-        android:fillColor="@android:color/white"
-        android:pathData="M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5  c0-3.04,2.46-5.5,5.5-5.5C10.24,3,12,4.24,12,4.24S13.76,3,16.5,3C19.04,3,21.5,5.46,21.5,8.5  c0,3.78-3.4,6.86-8.55,11.54L12,21.35z"/>
-    <path
-        android:strokeColor="@android:color/black"
-        android:strokeWidth="1"
-        android:pathData="M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5  c0-3.04,2.46-5.5,5.5-5.5C10.24,3,12,4.24,12,4.24S13.76,3,16.5,3C19.04,3,21.5,5.46,21.5,8.5  c0,3.78-3.4,6.86-8.55,11.54L12,21.35z"/>
+
+    <group>
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5
+            c0-3.04,2.46-5.5,5.5-5.5C10.24,3,12,4.24,12,4.24S13.76,3,16.5,3C19.04,3,21.5,5.46,21.5,8.5
+            c0,3.78-3.4,6.86-8.55,11.54L12,21.35z"/>
+    </group>
+
+    <group>
+        <path
+            android:strokeColor="#000000"
+            android:strokeWidth="1"
+            android:fillColor="#00000000"
+            android:pathData="M12,21.35l-1.45-1.32C5.4,15.36,2,12.28,2,8.5
+        c0-3.04,2.46-5.5,5.5-5.5C10.24,3,12,4.24,12,4.24S13.76,3,16.5,3C19.04,3,21.5,5.46,21.5,8.5
+        c0,3.78-3.4,6.86-8.55,11.54L12,21.35z"/>
+    </group>
 </vector>

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.DrawableCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Domain.ItemDomain;
@@ -55,14 +56,21 @@ public class DetailActivity extends BaseActivity {
         binding.likeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!isFavorite){
-                    binding.likeBtn.setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+                if (!isFavorite) {
+                    isFavorite = !isFavorite;
+                    Drawable drawable = binding.likeBtn.getDrawable();
+                    DrawableCompat.setTint(drawable, Color.RED);
+                    binding.likeBtn.setImageDrawable(drawable);
+                    object.setFavorite(isFavorite);
                     addFavorite(object);
-                }else {
-                    binding.likeBtn.setColorFilter(Color.WHITE, PorterDuff.Mode.SRC_IN);
+                } else {
+                    isFavorite = !isFavorite;
+                    Drawable drawable = binding.likeBtn.getDrawable();
+                    DrawableCompat.setTint(drawable, Color.WHITE);
+                    binding.likeBtn.setImageDrawable(drawable);
+                    object.setFavorite(isFavorite);
                     removeFavorite(object);
                 }
-                isFavorite = !isFavorite;
             }
         });
     }

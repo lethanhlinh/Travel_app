@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
+import com.example.travel_app.Fragment.FavoriteFragment;
 import com.example.travel_app.Fragment.HomeFragment;
+import com.example.travel_app.Fragment.LocationFragment;
 import com.example.travel_app.Fragment.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
@@ -20,6 +22,10 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new HomeFragment();
             case 1:
+                return new LocationFragment();
+            case 2:
+                return new FavoriteFragment();
+            case 3:
                 return new ProfileFragment();
             default:
                 return new HomeFragment();
@@ -29,6 +35,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 4;
     }
 }
