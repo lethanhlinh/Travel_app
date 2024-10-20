@@ -57,22 +57,19 @@ public class DetailActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 if (!isFavorite) {
-                    isFavorite = !isFavorite;
-                    Drawable drawable = binding.likeBtn.getDrawable();
-                    DrawableCompat.setTint(drawable, Color.RED);
-                    binding.likeBtn.setImageDrawable(drawable);
+                    isFavorite = true;
+                    binding.likeBtn.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
                     object.setFavorite(isFavorite);
                     addFavorite(object);
                 } else {
-                    isFavorite = !isFavorite;
-                    Drawable drawable = binding.likeBtn.getDrawable();
-                    DrawableCompat.setTint(drawable, Color.WHITE);
-                    binding.likeBtn.setImageDrawable(drawable);
+                    isFavorite = false;
+                    binding.likeBtn.getDrawable().clearColorFilter();
                     object.setFavorite(isFavorite);
                     removeFavorite(object);
                 }
             }
         });
+
     }
 
     private void removeFavorite(ItemDomain object) {
