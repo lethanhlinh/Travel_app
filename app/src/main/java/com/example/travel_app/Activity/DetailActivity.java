@@ -1,6 +1,7 @@
 package com.example.travel_app.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -16,6 +17,7 @@ import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityDetailBinding;
 import com.example.travel_app.databinding.ActivityMainBinding;
+import com.google.gson.Gson;
 
 public class DetailActivity extends BaseActivity {
     ActivityDetailBinding binding;
@@ -53,31 +55,49 @@ public class DetailActivity extends BaseActivity {
             startActivity(intent);
         });
 
-        binding.likeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!isFavorite) {
-                    isFavorite = true;
-                    binding.likeBtn.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
-                    object.setFavorite(isFavorite);
-                    addFavorite(object);
-                } else {
-                    isFavorite = false;
-                    binding.likeBtn.getDrawable().clearColorFilter();
-                    object.setFavorite(isFavorite);
-                    removeFavorite(object);
-                }
+        // Kiểm tra trạng thái yêu thích từ SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("FavoriteItems", MODE_PRIVATE);
+        String json = sharedPreferences.getString(object.getTitle(), null);
+        if (json != null) {
+            isFavorite = true;
+            binding.likeBtn.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+            object.setFavorite(isFavorite);
+        }
+
+        binding.likeBtn.setOnClickListener(view -> {
+            if (!isFavorite) {
+                isFavorite = true;
+                binding.likeBtn.getDrawable().setColorFilter(Color.RED, PorterDuff.Mode.SRC_IN);
+                object.setFavorite(isFavorite);
+                addFavorite(object);
+            } else {
+                isFavorite = false;
+                binding.likeBtn.getDrawable().clearColorFilter();
+                object.setFavorite(isFavorite);
+                removeFavorite(object);
             }
         });
-
     }
 
     private void removeFavorite(ItemDomain object) {
+        SharedPreferences sharedPreferences = getSharedPreferences("FavoriteItems", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        // Xóa mục yêu thích bằng ID
+        editor.remove(object.getTitle());
+        editor.apply();
     }
 
     private void addFavorite(ItemDomain object) {
+        SharedPreferences sharedPreferences = getSharedPreferences("FavoriteItems", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        // Chuyển đối tượng ItemDomain thành JSON
+        String json = new Gson().toJson(object);
+
+        // Lưu vào SharedPreferences với key là ID của item
+        editor.putString(object.getTitle(), json);
+        editor.apply();
     }
 
     private void getIntentExtra() {

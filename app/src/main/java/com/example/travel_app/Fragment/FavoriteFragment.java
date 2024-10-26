@@ -1,13 +1,25 @@
 package com.example.travel_app.Fragment;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.travel_app.Adapter.FavoriteAdapter;
+import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.R;
+import com.example.travel_app.databinding.FragmentFavoriteBinding;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,6 +36,10 @@ public class FavoriteFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private FragmentFavoriteBinding binding;
+    private ArrayList<ItemDomain> favoriteItems;
+    private FavoriteAdapter adapter;
 
     public FavoriteFragment() {
         // Required empty public constructor
@@ -59,7 +75,35 @@ public class FavoriteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+        // Khởi tạo binding và inflate layout
+        binding = FragmentFavoriteBinding.inflate(inflater, container, false);
+
+        // Khởi tạo danh sách
+        favoriteItems = new ArrayList<>();
+        // Gọi phương thức load dữ liệu
+        loadFavoriteItems();
+
+        // Thiết lập RecyclerView
+        adapter = new FavoriteAdapter(favoriteItems);
+        binding.recyclerViewFavorite.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        binding.recyclerViewFavorite.setAdapter(adapter);
+
+        return binding.getRoot();
+    }
+
+    private void loadFavoriteItems() {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("FavoriteItems", Context.MODE_PRIVATE);
+        Map<String, ?> allEntries = sharedPreferences.getAll();
+
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            String json = (String) entry.getValue();
+            ItemDomain item = new Gson().fromJson(json, ItemDomain.class);
+            favoriteItems.add(item);
+        }
+
+        // Nếu danh sách trống, hiển thị thông báo
+        if (favoriteItems.isEmpty()) {
+            Toast.makeText(getContext(), "Chưa có sản phẩm yêu thích!", Toast.LENGTH_SHORT).show();
+        }
     }
 }
