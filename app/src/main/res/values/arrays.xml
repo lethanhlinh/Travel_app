@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reward_options">
+        <item>Mũ bảo hiểm du lịch - 100 điểm</item>
+        <item>Áo mưa du lịch - 200 điểm</item>
+        <item>Balo du lịch - 500 điểm</item>
+        <item>Gối cổ du lịch - 300 điểm</item>
+        <item>Khăn choàng đi biển - 150 điểm</item>
+    </string-array>
+</resources>
