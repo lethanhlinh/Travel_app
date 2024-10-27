@@ -11,217 +11,36 @@
         android:layout_height="0dp"
         android:background="#7FD0E9"
         android:padding="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/thanhmenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <LinearLayout
+        app:layout_constraintVertical_bias="0.0"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewFavorite"
                 android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progressBarFavorite"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:padding="10dp">
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"/>
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:backgroundTint="#EB1717"
-                    android:gravity="center"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:text="Favourite"
-                    android:textColor="@android:color/white" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:contentDescription="Heart icon"
-                    android:src="@drawable/ic_heart_default" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:paddingTop="16dp"
-                android:paddingBottom="16dp"
-                android:weightSum="3">
-
-                <ImageView
-                    android:layout_width="16dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:contentDescription="Menu icon"
-                    android:src="@drawable/ic_menu" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Danh sách"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:contentDescription="Delete icon"
-                    android:src="@drawable/ic_delete" />
-            </LinearLayout>
-
-            <!-- First Tour Item -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/white"
-                android:backgroundTint="#E0E0E0"
-                android:elevation="2dp"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <!-- Tour Image -->
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="2"
-                    android:contentDescription="Tour Image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/banahill"
-                    android:background="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Bà Nà Hills"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:backgroundTint="#42A5F5"
-                    android:text="Đặt vé"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/white"
-                android:backgroundTint="#E0E0E0"
-                android:elevation="2dp"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="2"
-                    android:contentDescription="Tour Image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/balibeach"
-                    android:background="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Biển Bali"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:backgroundTint="#42A5F5"
-                    android:text="Đặt vé"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@android:color/white"
-                android:backgroundTint="#E0E0E0"
-                android:elevation="2dp"
-                android:orientation="horizontal"
-                android:padding="16dp">
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="2"
-                    android:contentDescription="Tour Image"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/item_3"
-                    android:background="@color/white" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="3"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Đảo Phú Quốc"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:backgroundTint="#42A5F5"
-                    android:text="Đặt vé"
-                    android:textColor="@android:color/white" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

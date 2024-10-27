@@ -18,9 +18,10 @@
         android:id="@+id/thanhmenu"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:background="@color/white"
         android:elevation="3dp"
         android:padding="4dp"
+        app:itemIconTint="@color/blue"
+        app:itemRippleColor="@color/blue"
         app:menu="@menu/menu_bottom"
         android:layout_alignParentBottom="true" />
 </RelativeLayout>
