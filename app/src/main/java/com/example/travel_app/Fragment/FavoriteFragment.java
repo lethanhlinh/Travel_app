@@ -26,7 +26,7 @@ import java.util.Map;
  * Use the {@link FavoriteFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FavoriteFragment extends Fragment {
+public class FavoriteFragment extends Fragment implements FavoriteAdapter.OnFavoriteChangeListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,11 +84,20 @@ public class FavoriteFragment extends Fragment {
         loadFavoriteItems();
 
         // Thiết lập RecyclerView
-        adapter = new FavoriteAdapter(favoriteItems);
+        adapter = new FavoriteAdapter(favoriteItems, this);
         binding.recyclerViewFavorite.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         binding.recyclerViewFavorite.setAdapter(adapter);
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        favoriteItems.clear();
+        loadFavoriteItems();
+        adapter.notifyDataSetChanged();
     }
 
     private void loadFavoriteItems() {
@@ -105,5 +114,11 @@ public class FavoriteFragment extends Fragment {
         if (favoriteItems.isEmpty()) {
             Toast.makeText(getContext(), "Chưa có sản phẩm yêu thích!", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void onFavoriteChanged() {
+        loadFavoriteItems();
+        adapter.notifyDataSetChanged();
     }
 }

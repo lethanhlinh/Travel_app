@@ -1,6 +1,7 @@
 package com.example.travel_app.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -23,6 +24,18 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Kiểm tra trạng thái đăng nhập
+        SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
+        boolean isLoggedIn = sharedPreferences.getBoolean("isLoggedIn", false); // Mặc định là false nếu không có dữ liệu
+
+        if (!isLoggedIn) {
+            // Nếu chưa đăng nhập, mở trang đăng nhập
+            Intent intent = new Intent(MainActivity.this, SignInActivity.class);
+            startActivity(intent);
+            finish();
+            return;
+        }
 
         viewPager = findViewById(R.id.viewPager);
         bottomNavigationView = findViewById(R.id.thanhmenu);
