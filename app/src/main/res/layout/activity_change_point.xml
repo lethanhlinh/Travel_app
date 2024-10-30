@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#8BC5EF">
+
+    <!-- Điểm hiện tại -->
+    <TextView
+        android:id="@+id/tv_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5.016 điểm"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:id="@+id/tv_member_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Khách Hàng Tiềm năng"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_points"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <!-- Button Đổi quà -->
+    <Button
+        android:id="@+id/btn_redeem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Đổi quà"
+        android:backgroundTint="#FF5252"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tv_member_status"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Button Giới thiệu -->
+    <Button
+        android:id="@+id/btn_introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giới thiệu"
+        android:backgroundTint="#FF5252"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tv_member_status"
+        app:layout_constraintStart_toEndOf="@id/btn_redeem"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Button Ưu đãi đã nhận -->
+    <Button
+        android:id="@+id/btn_offers_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ưu đãi đã nhận"
+        android:backgroundTint="#FF5252"
+        android:textColor="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@id/tv_member_status"
+        app:layout_constraintStart_toEndOf="@id/btn_introduce"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp" />
+
+    <TextView
+        android:id="@+id/tv_telecom_offers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ưu đãi Dịch Vụ"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/btn_redeem"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="16dp" />
+
+    <!-- Các nút trong phần Ưu đãi viễn thông -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/tv_telecom_offers"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Quà"
+            android:backgroundTint="#FFC0CB" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Quay Thưởng"
+            android:backgroundTint="#FFB6C1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tiền Mặt"
+            android:backgroundTint="#FF69B4" />
+    </LinearLayout>
+
+
+    <TextView
+
+        android:id="@+id/tvExclusiveOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ưu đãi độc quyền"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_telecom_offers"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="72dp"
+        android:layout_marginLeft="16dp" />
+
+    <!-- Nội dung phần "Ưu đãi độc quyền" -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@id/tvExclusiveOffers"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp">
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerExclusiveOffers"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutExclusiveIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/viewPagerExclusiveOffers"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tabIndicatorColor="#FF5252"
+            app:tabIndicatorFullWidth="false"
+            app:tabSelectedTextColor="#FF5252"
+            app:tabTextColor="#888888" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
