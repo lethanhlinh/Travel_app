@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.travel_app.Fragment.FavoriteFragment;
 import com.example.travel_app.Fragment.HomeFragment;
-import com.example.travel_app.Fragment.LocationFragment;
+import com.example.travel_app.Fragment.GiftFragment;
 import com.example.travel_app.Fragment.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
@@ -22,7 +22,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new HomeFragment();
             case 1:
-                return new LocationFragment();
+                return new GiftFragment();
             case 2:
                 return new FavoriteFragment();
             case 3:
