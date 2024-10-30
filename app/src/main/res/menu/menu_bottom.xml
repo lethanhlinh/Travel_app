@@ -8,7 +8,7 @@
     />
     <item
         android:id="@+id/menu_location"
-        android:icon="@drawable/bottom_btn2"
+        android:icon="@drawable/gift"
         android:title="Đổi quà"
         app:cnb_iconColor="@color/white" />
 
