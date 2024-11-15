@@ -44,6 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chi tiết đặt vé"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:textColor="@color/white"
                     android:textStyle="bold"
                     android:textSize="22sp"
@@ -77,6 +78,7 @@
                             android:background="@drawable/light_blue_bg"
                             android:gravity="center"
                             android:text="Chuyến đi"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/blue"
                             android:textStyle="bold"
 
@@ -88,6 +90,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Order ID:987654"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -109,6 +112,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="16dp"
                         android:text="Tiêu đề"
+                        android:fontFamily="@font/sourcesanspro_regular"
                         android:textColor="@color/darkBlue"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -118,6 +122,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/sourcesanspro_regular"
                         android:text="Vui lòng xuất trình vé này cho hướng dẫn viên của bạn trước khi khởi hành"
                         android:textColor="@color/darkBlue"
                         android:textSize="12sp" />
@@ -131,6 +136,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Ngày khởi hành"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/darkBlue"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -141,6 +147,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="Linh"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/darkBlue"
                             android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="@+id/textView17"
@@ -152,6 +159,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="48dp"
                             android:text="Thời gian khởi hành"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/darkBlue"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/textView17" />
@@ -162,6 +170,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="00"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/darkBlue"
                             android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="@+id/textView20"
@@ -173,6 +182,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:text="Thời gian phục vụ"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/darkBlue"
                             app:layout_constraintStart_toStartOf="@+id/tourGuideTxt"
                             app:layout_constraintTop_toBottomOf="@+id/tourGuideTxt" />
@@ -194,6 +204,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="16dp"
                             android:text="Tổng số lượng hành khách"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/darkBlue"
                             app:layout_constraintStart_toStartOf="@+id/textView20"
                             app:layout_constraintTop_toBottomOf="@+id/timeTxt" />
@@ -204,6 +215,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:text="0"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:textColor="@color/darkBlue"
                             android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="@+id/textView24"
@@ -231,6 +243,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             android:text="Hướng dẫn viên"
                             android:textColor="@color/darkBlue"
                             app:layout_constraintStart_toEndOf="@+id/profile"
@@ -243,6 +256,7 @@
                             android:text="Tên"
                             android:textColor="@color/darkBlue"
                             android:textStyle="bold"
+                            android:fontFamily="@font/sourcesanspro_regular"
                             app:layout_constraintBottom_toBottomOf="@+id/profile"
                             app:layout_constraintStart_toStartOf="@+id/textView18" />
 
@@ -285,12 +299,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/button"
+                android:id="@+id/btnDownload"
                 android:layout_width="match_parent"
                 android:layout_margin="24dp"
                 android:background="@drawable/blue_bg"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+                android:fontFamily="@font/sourcesanspro_bold"
                 style="@android:style/Widget.Button"
                 android:layout_height="wrap_content"
                 android:text="Tải vé ngay" />

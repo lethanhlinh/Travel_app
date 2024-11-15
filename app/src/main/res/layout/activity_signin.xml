@@ -13,6 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:text="TRAVEL APP"
+        android:fontFamily="@font/sourcesanspro_bold"
         android:textColor="#000000"
         android:textSize="40sp"
         android:textStyle="bold" />
@@ -33,6 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Tên đăng nhập"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:textColor="#000000" />
 
         <EditText
@@ -41,6 +43,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="Nhập tên đăng nhập"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="textEmailAddress"
             android:padding="10dp" />
 
@@ -49,6 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Mật khẩu"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:textColor="#000000" />
 
         <EditText
@@ -57,6 +61,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="Nhập mật khẩu"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="textPassword"
             android:padding="10dp" /> <!-- Nên tạo một drawable cho EditText -->
 
@@ -67,6 +72,7 @@
             android:layout_gravity="end"
             android:layout_marginTop="10dp"
             android:text="Quên mật khẩu?"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:textColor="@color/black" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -80,6 +86,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="15dp"
                 android:text="Bạn chưa có tài khoản?"
+                android:fontFamily="@font/sourcesanspro_italic"
                 android:textSize="15dp"
                 android:textColor="@android:color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -96,6 +103,7 @@
                 android:background="?attr/selectableItemBackground"
                 android:text="@string/text_SignUp"
                 android:textColor="@color/Red"
+                android:fontFamily="@font/sourcesanspro_bold"
                 app:layout_constraintBottom_toBottomOf="@+id/textView14"
                 app:layout_constraintStart_toEndOf="@+id/textView14"
                 app:layout_constraintTop_toTopOf="@+id/textView14" />
@@ -107,6 +115,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:background="@drawable/btn_default_bg"
             android:padding="10dp"
             android:text="SIGN IN"
@@ -120,7 +129,7 @@
         android:layout_height="60dp"
         android:layout_below="@+id/linearLayout"
         android:layout_alignStart="@+id/linearLayout"
-
+        android:fontFamily="@font/sourcesanspro_italic"
         android:layout_alignEnd="@+id/linearLayout"
         android:layout_marginStart="59dp"
         android:layout_marginTop="25dp"
@@ -155,6 +164,7 @@
             android:drawablePadding="10dp"
             android:paddingLeft="20dp"
             android:text="Google"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:textColor="@color/white"
             android:textAlignment="textStart"
             android:textAllCaps="false" />
@@ -170,6 +180,7 @@
             android:drawablePadding="10dp"
             android:paddingLeft="20dp"
             android:text="Facebook"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:textColor="@color/white"
             android:textAlignment="textStart"
             android:textAllCaps="false" />

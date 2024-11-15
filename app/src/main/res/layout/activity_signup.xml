@@ -13,6 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:text="ĐĂNG KÍ TÀI KHOẢN"
+        android:fontFamily="@font/sourcesanspro_bold"
         android:textColor="#02182E"
         android:textSize="40sp"
         android:textStyle="bold" />
@@ -33,87 +34,114 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Họ và tên"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/hoTenTxt"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/hoTenLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Quan_Linh_Viet"
-            android:padding="10dp"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/edit_text_background" />
+            android:hint="Quan_Linh_Viet">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/hoTenTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:padding="10dp"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/edit_text_background" />
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/emailTxt"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="youremail@example.com"
-            android:padding="10dp"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/edit_text_background" />
-
+            android:hint="youremail@example.com">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:padding="10dp"
+                    android:inputType="textPersonName"
+                    android:background="@drawable/edit_text_background" />
+        </com.google.android.material.textfield.TextInputLayout>
         <!-- Trường Số Điện Thoại -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Số điện thoại"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/phoneTxt"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="0123456789"
-            android:padding="10dp"
-            android:inputType="phone"
-            android:background="@drawable/edit_text_background" />
-
+            android:hint="0123456789">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phoneTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:padding="10dp"
+                    android:inputType="phone"
+                    android:background="@drawable/edit_text_background" />
+        </com.google.android.material.textfield.TextInputLayout>
         <!-- Trường Mật Khẩu -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Password"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/passWordTxt"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passWordLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="********"
-            android:padding="10dp"
-            android:inputType="textPassword"
-            android:background="@drawable/edit_text_background" />
-
+            android:hint="********">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/passWordTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:padding="10dp"
+                    android:inputType="textPassword"
+                    android:background="@drawable/edit_text_background" />
+        </com.google.android.material.textfield.TextInputLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Confirm Password"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:textColor="@color/black"
             android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/confirmPwTxt"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirmPwLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="********"
-            android:padding="10dp"
-            android:inputType="textPassword"
-            android:background="@drawable/edit_text_background" />
-
+            android:hint="********">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmPwTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:background="@drawable/edit_text_background" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnSignUp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="SIGN UP"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:background="@drawable/btn_default_bg"
             android:textColor="@android:color/white"
             android:layout_marginTop="20dp"
@@ -132,6 +160,7 @@
                 android:layout_marginBottom="15dp"
                 android:textSize="15dp"
                 android:text="Bạn đã có tài khoản?"
+                android:fontFamily="@font/sourcesanspro_italic"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -144,6 +173,7 @@
                 android:text="@string/text_SignIn"
                 android:textColor="@color/Red"
                 android:textSize="15dp"
+                android:fontFamily="@font/sourcesanspro_bold"
                 android:background="?attr/selectableItemBackground"
                 app:layout_constraintBottom_toBottomOf="@+id/textView21"
                 app:layout_constraintStart_toEndOf="@+id/textView21"
@@ -163,6 +193,7 @@
         android:layout_marginEnd="140dp"
         android:gravity="center"
         android:text="Đăng kí với"
+        android:fontFamily="@font/sourcesanspro_italic"
         android:textColor="@color/black"
         android:textSize="20dp" />
 
@@ -185,6 +216,7 @@
             android:drawablePadding="10dp"
             android:paddingLeft="20dp"
             android:text="Google"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:textColor="@color/white"
             android:textAlignment="textStart"
             android:textAllCaps="false"
@@ -201,6 +233,7 @@
             android:drawablePadding="10dp"
             android:paddingLeft="20dp"
             android:text="Facebook"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:textColor="@color/white"
             android:textAlignment="textStart"
             android:textAllCaps="false"/>

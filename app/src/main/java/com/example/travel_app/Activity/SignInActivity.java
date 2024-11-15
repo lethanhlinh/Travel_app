@@ -13,7 +13,7 @@ import com.example.travel_app.databinding.ActivityIntroBinding;
 import com.example.travel_app.databinding.ActivitySigninBinding;
 import com.google.android.material.tabs.TabLayout;
 
-public class SignInActivity extends AppCompatActivity {
+public class SignInActivity extends BaseActivity {
 
     private ActivitySigninBinding binding;
     //Khai báo user o day

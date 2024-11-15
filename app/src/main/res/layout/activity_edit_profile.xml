@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#87C7EF"
+    android:background="#B2E3FF"
     tools:context=".Activity.EditProfileActivity">
 
 
@@ -28,13 +28,14 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="58dp"
         android:text="Thông tin tài khoản"
+        android:fontFamily="@font/sourcesanspro_regular"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/pic"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_above="@+id/linearLayout2"
@@ -70,7 +71,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Họ và tên"
-            android:textColor="@color/white" />
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/hoTenTxt"
@@ -78,6 +80,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="Quan_Linh_Viet"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="textEmailAddress"
             android:padding="10dp" />
 
@@ -85,7 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
-            android:textColor="@color/white" />
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/emailTxt"
@@ -93,6 +97,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="youremail@example.com"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="textEmailAddress"
             android:padding="10dp" />
 
@@ -102,7 +107,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Số điện thoại"
-            android:textColor="@color/white" />
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/phoneTxt"
@@ -110,6 +116,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="0123456789"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="phone"
             android:padding="10dp" />
 
@@ -118,7 +125,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Ngày sinh"
-            android:textColor="@color/white" />
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/nsinhTxt"
@@ -126,6 +134,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="dd/mm/yy"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="phone"
             android:padding="10dp" />
 
@@ -134,7 +143,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Password"
-            android:textColor="@color/white" />
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/passWordTxt"
@@ -142,6 +152,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="********"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="textPassword"
             android:padding="10dp" />
 
@@ -150,7 +161,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Confirm Password"
-            android:textColor="@color/white" />
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/confirmPwTxt"
@@ -158,6 +170,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/edit_text_background"
             android:hint="********"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:inputType="textPassword"
             android:padding="10dp" />
 
@@ -167,6 +180,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="24dp"
             android:backgroundTint="#1D84D7"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:text="Lưu Thay đổi" />
     </LinearLayout>
 </RelativeLayout>

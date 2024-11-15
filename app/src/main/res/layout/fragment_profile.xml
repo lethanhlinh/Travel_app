@@ -28,6 +28,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="8dp"
             android:text="Your Name"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:text="email@example.com" />
 
         <TextView
@@ -46,6 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Chỉnh sửa thông tin"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:layout_gravity="center"
             android:textSize="20sp" />
         <TextView
@@ -54,6 +57,7 @@
             android:layout_marginTop="12dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:text="Cài đặt"
             android:layout_gravity="center"
             android:textSize="20sp" />
@@ -64,6 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Lịch sử Đặt Tours"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:layout_gravity="center"
             android:textSize="20sp" />
     </LinearLayout>
