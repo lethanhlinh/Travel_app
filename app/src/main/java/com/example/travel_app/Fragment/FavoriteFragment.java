@@ -108,6 +108,8 @@ public class FavoriteFragment extends Fragment implements FavoriteAdapter.OnFavo
             String json = (String) entry.getValue();
             ItemDomain item = new Gson().fromJson(json, ItemDomain.class);
             favoriteItems.add(item);
+            binding.progressBarFavorite.setVisibility(getView().GONE);
+
         }
 
         // Nếu danh sách trống, hiển thị thông báo

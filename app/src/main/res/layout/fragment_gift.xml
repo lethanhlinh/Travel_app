@@ -2,108 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/nendoidiem"
+
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tích Điểm Đổi Quà"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:padding="8dp"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:id="@+id/points_current"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Điểm hiện tại: 200"
-            android:textSize="18sp"
-            android:padding="8dp" />
-
-        <!-- Bảng quy định đổi quà -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Quy định đổi quà"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:padding="8dp"
-            android:layout_gravity="center" />
-
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:stretchColumns="1"
-            android:background="#EEEEEE"
-            android:padding="8dp">
-
-            <TableRow>
-                <TextView android:text="100 điểm" android:padding="8dp"/>
-                <TextView android:text="1 mũ bảo hiểm" android:padding="8dp"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:text="200 điểm" android:padding="8dp"/>
-                <TextView android:text="1 áo mưa" android:padding="8dp"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:text="500 điểm" android:padding="8dp"/>
-                <TextView android:text="1 balo du lịch" android:padding="8dp"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:text="300 điểm" android:padding="8dp"/>
-                <TextView android:text="1 gối cổ du lịch" android:padding="8dp"/>
-            </TableRow>
-            <TableRow>
-                <TextView android:text="150 điểm" android:padding="8dp"/>
-                <TextView android:text="1 khăn choàng đi biển" android:padding="8dp"/>
-            </TableRow>
-        </TableLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đổi quà"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:padding="8dp" />
-
-        <Spinner
-            android:id="@+id/spinner_rewards"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:entries="@array/reward_options" />
-
-        <EditText
-            android:id="@+id/points_input"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Nhập điểm cần đổi"
-            android:inputType="number"
-            android:padding="8dp" />
-
-        <Button
-            android:id="@+id/btn_confirm_exchange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Xác nhận đổi"
-            android:layout_gravity="center"
-            android:padding="16dp"
-            android:backgroundTint="@color/blue"
-            android:layout_marginTop="16dp"/>
-
-    </LinearLayout>
+  <com.google.android.material.tabs.TabLayout
+      android:id="@+id/tab_layout"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
+  <androidx.viewpager.widget.ViewPager
+      android:id="@+id/gift_viewpager"
+      android:layout_below="@id/tab_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
 
 </RelativeLayout>
