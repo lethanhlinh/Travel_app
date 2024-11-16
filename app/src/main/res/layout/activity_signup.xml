@@ -1,12 +1,8 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="utf-8"?>
-=======
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:fillViewport="true"
     android:background="@drawable/bg_login_signup">
 
@@ -16,40 +12,22 @@
         android:orientation="vertical"
         android:gravity="center"
         android:padding="10dp">
-=======
-    android:background="@drawable/bg_login_signup">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp">
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
-
-        <!-- Tiêu đề ĐĂNG KÍ TÀI KHOẢN -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_marginTop="10dp"
             android:text="ĐĂNG KÍ TÀI KHOẢN"
             android:fontFamily="@font/sourcesanspro_bold"
-=======
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:text="ĐĂNG KÍ TÀI KHOẢN"
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
             android:textColor="#02182E"
             android:textSize="40sp"
             android:textStyle="bold" />
 
-<<<<<<< HEAD
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:clipToPadding="false"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:paddingBottom="30dp">
 
             <TextView
@@ -74,43 +52,10 @@
                     android:background="@drawable/edit_text_background" />
             </com.google.android.material.textfield.TextInputLayout>
 
-=======
-        <!-- Form đăng ký -->
-        <LinearLayout
-            android:id="@+id/formLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="120dp"
-            android:padding="16dp"
-            android:layout_marginHorizontal="24dp"
-            android:clipToPadding="false"
-            android:paddingBottom="30dp">
-
-            <!-- Họ và tên -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Họ và tên"
-                android:textColor="@color/white"
-                android:textSize="18dp"/>
-
-            <EditText
-                android:id="@+id/hoTenTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Quan_Linh_Viet"
-                android:padding="10dp"
-                android:inputType="textPersonName"
-                android:background="@drawable/edit_text_background" />
-
-            <!-- Email -->
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Email"
-<<<<<<< HEAD
                 android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/black" />
 
@@ -200,6 +145,7 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnSignUp"
                 android:layout_width="match_parent"
+                android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:text="SIGN UP"
                 android:fontFamily="@font/sourcesanspro_bold"
@@ -256,159 +202,23 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="60dp"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="4dp"
             android:gravity="center">
-=======
-                android:textSize="18dp"
-                android:textColor="@color/white" />
-
-            <EditText
-                android:id="@+id/emailTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="youremail@example.com"
-                android:padding="10dp"
-                android:inputType="textEmailAddress"
-                android:background="@drawable/edit_text_background" />
-
-            <!-- Số điện thoại -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Số điện thoại"
-                android:textSize="18dp"
-                android:textColor="@color/white"
-                android:layout_marginTop="16dp" />
-
-            <EditText
-                android:id="@+id/phoneTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="0123456789"
-                android:padding="10dp"
-                android:inputType="phone"
-                android:background="@drawable/edit_text_background" />
-
-            <!-- Mật khẩu -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Password"
-                android:textSize="18dp"
-                android:textColor="@color/white"
-                android:layout_marginTop="16dp" />
-
-            <EditText
-                android:id="@+id/passWordTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="********"
-                android:padding="10dp"
-                android:inputType="textPassword"
-                android:background="@drawable/edit_text_background" />
-
-            <!-- Xác nhận mật khẩu -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Confirm Password"
-                android:textSize="18dp"
-                android:textColor="@color/white"
-                android:layout_marginTop="16dp" />
-
-            <EditText
-                android:id="@+id/confirmPwTxt"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="********"
-                android:padding="10dp"
-                android:inputType="textPassword"
-                android:background="@drawable/edit_text_background" />
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_marginTop="16dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="15dp"
-                    android:textSize="18dp"
-                    android:text="Bạn đã có tài khoản?"
-                    android:textColor="@android:color/black"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/btnSignIn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:text="@string/text_SignIn"
-                    android:textColor="@color/Red"
-                    android:textSize="18dp"
-                    android:background="?attr/selectableItemBackground"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView21"
-                    app:layout_constraintStart_toEndOf="@+id/textView21"
-                    app:layout_constraintTop_toTopOf="@+id/textView21" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <!-- Nút SIGN UP -->
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSignUp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SIGN UP"
-                android:background="@drawable/btn_default_bg"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="20dp"
-                android:padding="10dp" />
-        </LinearLayout>
-
-        <!-- TextView Đăng ký với -->
-        <TextView
-            android:id="@+id/tvRegisterWith"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/formLayout"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:text="Đăng ký với"
-            android:textColor="#0B1B6D"
-            android:textSize="20dp" />
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvRegisterWith"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:orientation="horizontal">
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnGoogle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:layout_marginStart="32dp"
                 android:layout_marginEnd="8dp"
-=======
-                android:layout_marginEnd="16dp"
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
                 android:background="@drawable/btn_default_bg"
                 android:drawableLeft="@drawable/ic_google"
                 android:drawablePadding="10dp"
                 android:paddingLeft="20dp"
                 android:text="Google"
-<<<<<<< HEAD
                 android:fontFamily="@font/sourcesanspro_bold"
-=======
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:textAllCaps="false" />
@@ -417,29 +227,19 @@
                 android:id="@+id/btnFacebook"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="32dp"
-=======
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
                 android:background="@drawable/btn_default_bg"
                 android:drawableLeft="@drawable/ic_facebook"
                 android:drawablePadding="10dp"
                 android:paddingLeft="20dp"
                 android:text="Facebook"
-<<<<<<< HEAD
                 android:fontFamily="@font/sourcesanspro_bold"
-=======
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
                 android:textColor="@color/white"
                 android:textAlignment="textStart"
                 android:textAllCaps="false" />
         </LinearLayout>
-<<<<<<< HEAD
 
     </LinearLayout>
 
-=======
-    </RelativeLayout>
->>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b
 </ScrollView>
