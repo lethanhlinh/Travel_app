@@ -27,6 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lịch sử Book"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textSize="20sp"
                 android:textColor="@android:color/black"
                 android:layout_marginStart="16dp" />
@@ -49,6 +50,7 @@
                 android:backgroundTint="#FAC3C3"
                 android:padding="10dp"
                 android:text="Đã Book"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -57,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:text="Đã Hủy"
                 android:textSize="20sp"
                 android:layout_marginStart="24dp"
@@ -69,6 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:text="Đánh Giá"
                 android:textSize="20sp"
                 android:layout_marginStart="24dp"
@@ -93,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Search"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:textSize="16sp"
                 android:background="@null" />
 
@@ -101,6 +106,7 @@
                 android:layout_width="85dp"
                 android:layout_height="42dp"
                 android:text="Tìm Kiếm"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:gravity="center"
                 android:textColor="@color/white"
                 android:background="@drawable/blue_bg"

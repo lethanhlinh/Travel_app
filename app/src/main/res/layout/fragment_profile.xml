@@ -49,6 +49,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="8dp"
             android:text="Your Name"
+            android:fontFamily="@font/sourcesanspro_bold"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -58,14 +59,44 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
+            android:fontFamily="@font/sourcesanspro_regular"
             android:text="email@example.com" />
 
         <!-- Nhóm các chức năng vào một LinearLayout -->
         <LinearLayout
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginTop="24dp">
+=======
+            android:layout_height="35dp"
+            android:text="Chỉnh sửa thông tin"
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/setting"
+            android:drawableLeft="@android:drawable/ic_menu_set_as"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:text="Cài đặt"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/booktour"
+            android:drawableLeft="@android:drawable/ic_menu_directions"
+            android:layout_marginTop="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Lịch sử Đặt Tours"
+            android:fontFamily="@font/sourcesanspro_regular"
+            android:layout_gravity="center"
+            android:textSize="20sp" />
+    </LinearLayout>
+>>>>>>> 22156ce5e9542bd43df07c4e8c44d4468b69e6c5
 
             <!-- Chỉnh sửa thông tin -->
             <TextView

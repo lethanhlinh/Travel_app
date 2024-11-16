@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TextAppearance cho từng biến thể của Source Sans Pro -->
+    <style name="TextAppearance.SourceSansPro.Black" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/sourcesanspro_black</item>
+    </style>
+
+    <style name="TextAppearance.SourceSansPro.Bold" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/sourcesanspro_bold</item>
+    </style>
+
+    <style name="TextAppearance.SourceSansPro.Italic" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/sourcesanspro_italic</item>
+    </style>
+
+    <style name="TextAppearance.SourceSansPro.Light" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/sourcesanspro_lightss</item>
+    </style>
+
+    <style name="TextAppearance.SourceSansPro.Regular" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:fontFamily">@font/sourcesanspro_regular</item>
+    </style>
+
+    <!-- Thêm các biến thể khác nếu cần -->
+</resources>

@@ -38,6 +38,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Vị trí"
+                    android:fontFamily="@font/sourcesanspro_regular"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -71,8 +72,7 @@
                     android:textColorHint="@color/darkBlue"
                     android:ems="10"
                     android:inputType="text"
-
-
+                    android:fontFamily="@font/sourcesanspro_regular"
                     android:hint="Đường phố, Địa chỉ, Thành phố..."
                     android:textSize="16sp"
                     android:textColor="@color/darkBlue"
@@ -87,6 +87,7 @@
                     android:layout_width="85dp"
                     android:layout_height="42dp"
                     android:text="Tìm Kiếm"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:gravity="center"
                     android:textColor="@color/white"
                     android:background="@drawable/blue_bg"
@@ -170,6 +171,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Giới thiệu"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:textColor="@color/darkBlue"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
@@ -179,7 +181,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/blue"
-                    android:text="Xem tất cả" />
+                    android:text="Xem tất cả"
+                    android:fontFamily="@font/sourcesanspro_regular"/>
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -225,6 +228,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Điểm đến phổ biến"
+                    android:fontFamily="@font/sourcesanspro_bold"
                     android:textSize="16sp"
                     android:textColor="@color/darkBlue"
                     android:textStyle="bold"/>
@@ -234,7 +238,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/blue"
-                    android:text="Xem tất cả" />
+                    android:text="Xem tất cả"
+                    android:fontFamily="@font/sourcesanspro_regular"/>
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
