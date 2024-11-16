@@ -1,206 +1,181 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:background="@drawable/loginbgr">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        android:text="ĐĂNG KÍ TÀI KHOẢN"
-        android:textColor="#02182E"
-        android:textSize="40sp"
-        android:textStyle="bold" />
-
-
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="160dp"
-        android:padding="16dp"
+        android:paddingBottom="10dp">
 
-        android:layout_marginHorizontal="24dp"
-        android:clipToPadding="false"
-        android:paddingBottom="30dp">
-
+        <!-- Tiêu đề ĐĂNG KÍ TÀI KHOẢN -->
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Họ và tên"
-            android:textColor="@color/white" />
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="ĐĂNG KÍ TÀI KHOẢN"
+            android:textColor="#02182E"
+            android:textSize="40sp"
+            android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/hoTenTxt"
+        <!-- Form đăng ký -->
+        <LinearLayout
+            android:id="@+id/formLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Quan_Linh_Viet"
-            android:padding="10dp"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/edit_text_background" />
+            android:orientation="vertical"
+            android:layout_marginTop="120dp"
+            android:padding="16dp"
+            android:layout_marginHorizontal="24dp"
+            android:clipToPadding="false"
+            android:paddingBottom="30dp">
+
+            <!-- Họ và tên -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Họ và tên"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/hoTenTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quan_Linh_Viet"
+                android:padding="10dp"
+                android:inputType="textPersonName"
+                android:background="@drawable/edit_text_background" />
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textColor="@color/white" />
+
+            <EditText
+                android:id="@+id/emailTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="youremail@example.com"
+                android:padding="10dp"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/edit_text_background" />
+
+            <!-- Số điện thoại -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số điện thoại"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/phoneTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="0123456789"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:background="@drawable/edit_text_background" />
+
+            <!-- Mật khẩu -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/passWordTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="********"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:background="@drawable/edit_text_background" />
+
+            <!-- Xác nhận mật khẩu -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Confirm Password"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp" />
+
+            <EditText
+                android:id="@+id/confirmPwTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="********"
+                android:padding="10dp"
+                android:inputType="textPassword"
+                android:background="@drawable/edit_text_background" />
+
+            <!-- Nút SIGN UP -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP"
+                android:background="@drawable/btn_default_bg"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="20dp"
+                android:padding="10dp" />
+        </LinearLayout>
+
+        <!-- TextView Đăng ký với -->
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/tvRegisterWith"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email"
-            android:textColor="@color/white" />
-
-        <EditText
-            android:id="@+id/emailTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="youremail@example.com"
-            android:padding="10dp"
-            android:inputType="textEmailAddress"
-            android:background="@drawable/edit_text_background" />
-
-        <!-- Trường Số Điện Thoại -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Số điện thoại"
-            android:textColor="@color/white"
-            android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/phoneTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="0123456789"
-            android:padding="10dp"
-            android:inputType="phone"
-            android:background="@drawable/edit_text_background" />
-
-        <!-- Trường Mật Khẩu -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Password"
-            android:textColor="@color/white"
-            android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/passWordTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="********"
-            android:padding="10dp"
-            android:inputType="textPassword"
-            android:background="@drawable/edit_text_background" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Confirm Password"
-            android:textColor="@color/white"
-            android:layout_marginTop="16dp"/>
-
-        <EditText
-            android:id="@+id/confirmPwTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="********"
-            android:padding="10dp"
-            android:inputType="textPassword"
-            android:background="@drawable/edit_text_background" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnSignUp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="SIGN UP"
-            android:background="@drawable/btn_default_bg"
-            android:textColor="@android:color/white"
-            android:layout_marginTop="20dp"
-            android:padding="10dp"/>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+            android:layout_below="@id/formLayout"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:layout_height="match_parent">
+            android:text="Đăng ký với"
+            android:textColor="#F0163F"
+            android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/textView21"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="15dp"
-                android:textSize="15dp"
-                android:text="Bạn đã có tài khoản?"
-                android:textColor="@android:color/black"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/btnSignIn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="@string/text_SignIn"
-                android:textColor="@color/Red"
-                android:textSize="15dp"
-                android:background="?attr/selectableItemBackground"
-                app:layout_constraintBottom_toBottomOf="@+id/textView21"
-                app:layout_constraintStart_toEndOf="@+id/textView21"
-                app:layout_constraintTop_toTopOf="@+id/textView21" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="141dp"
-        android:textColor="#0B1B6D"
-        android:layout_marginTop="660dp"
-        android:layout_marginEnd="140dp"
-        android:gravity="center"
-        android:text="Đăng kí với"
-        android:textSize="20dp" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:gravity="center">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnGoogle"
-            android:layout_width="150dp"
+        <!-- Các nút Google và Facebook -->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/btn_default_bg"
-            android:drawableLeft="@drawable/ic_google"
-            android:drawablePadding="10dp"
-            android:paddingLeft="20dp"
-            android:text="Google"
-            android:textColor="@color/white"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            />
+            android:layout_below="@id/tvRegisterWith"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnFacebook"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="32dp"
-            android:background="@drawable/btn_default_bg"
-            android:drawableLeft="@drawable/ic_facebook"
-            android:drawablePadding="10dp"
-            android:paddingLeft="20dp"
-            android:text="Facebook"
-            android:textColor="@color/white"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"/>
-    </LinearLayout>
-</RelativeLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnGoogle"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/btn_default_bg"
+                android:drawableLeft="@drawable/ic_google"
+                android:drawablePadding="10dp"
+                android:paddingLeft="20dp"
+                android:text="Google"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:textAllCaps="false" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnFacebook"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_default_bg"
+                android:drawableLeft="@drawable/ic_facebook"
+                android:drawablePadding="10dp"
+                android:paddingLeft="20dp"
+                android:text="Facebook"
+                android:textColor="@color/white"
+                android:textAlignment="textStart"
+                android:textAllCaps="false" />
+        </LinearLayout>
+    </RelativeLayout>
+</ScrollView>
