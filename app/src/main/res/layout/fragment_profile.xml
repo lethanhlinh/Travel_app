@@ -111,4 +111,8 @@
             android:text="Quyền riêng tư"
             android:textSize="20sp" />
     </LinearLayout>
+<<<<<<< HEAD
 </androidx.constraintlayout.widget.ConstraintLayout>
+=======
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> 9c9b27e1d1fec65a65f061533ab1389339ea688b

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8BC5EF">
-
-    <!-- Điểm hiện tại -->
+    
     <TextView
         android:id="@+id/tv_points"
         android:layout_width="wrap_content"
