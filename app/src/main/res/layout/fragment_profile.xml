@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7DD4FB"
+    android:background="#95D8F6"
     tools:context=".Fragment.ProfileFragment">
 
     <LinearLayout
@@ -49,7 +49,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="8dp"
             android:text="Your Name"
-            android:fontFamily="@font/sourcesanspro_bold"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -59,100 +58,57 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="16dp"
-            android:fontFamily="@font/sourcesanspro_regular"
             android:text="email@example.com" />
 
-        <!-- Nhóm các chức năng vào một LinearLayout -->
-        <LinearLayout
+        <!-- Danh sách các chức năng -->
+        <TextView
+            android:id="@+id/edit_info"
+            android:drawableLeft="@android:drawable/ic_menu_myplaces"
+            android:drawableRight="@drawable/arrow_detail"
+            android:layout_marginTop="32dp"
             android:layout_width="match_parent"
-<<<<<<< HEAD
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="24dp">
-=======
             android:layout_height="35dp"
             android:text="Chỉnh sửa thông tin"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:layout_gravity="center"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/setting"
             android:drawableLeft="@android:drawable/ic_menu_set_as"
-            android:layout_marginTop="12dp"
+            android:drawableRight="@drawable/arrow_detail"
+            android:layout_marginTop="14dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:fontFamily="@font/sourcesanspro_regular"
             android:text="Cài đặt"
-            android:layout_gravity="center"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/booktour"
             android:drawableLeft="@android:drawable/ic_menu_directions"
-            android:layout_marginTop="12dp"
+            android:drawableRight="@drawable/arrow_detail"
+            android:layout_marginTop="14dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Lịch sử Đặt Tours"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:layout_gravity="center"
             android:textSize="20sp" />
-    </LinearLayout>
->>>>>>> 22156ce5e9542bd43df07c4e8c44d4468b69e6c5
 
-            <!-- Chỉnh sửa thông tin -->
-            <TextView
-                android:id="@+id/edit_info"
-                android:drawableLeft="@android:drawable/ic_menu_myplaces"
-                android:drawableRight="@drawable/arrow_detail"
-                android:layout_marginTop="14dp"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Chỉnh sửa thông tin"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/account_security"
+            android:drawableLeft="@android:drawable/ic_lock_lock"
+            android:drawableRight="@drawable/arrow_detail"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Tài khoản và bảo mật"
+            android:textSize="20sp" />
 
-            <!-- Cài đặt -->
-            <TextView
-                android:id="@+id/setting"
-                android:drawableLeft="@android:drawable/ic_menu_set_as"
-                android:drawableRight="@drawable/arrow_detail"
-                android:layout_marginTop="14dp"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Cài đặt"
-                android:textSize="20sp" />
-
-            <!-- Lịch sử Đặt Tours -->
-            <TextView
-                android:id="@+id/booktour"
-                android:drawableLeft="@android:drawable/ic_menu_directions"
-                android:drawableRight="@drawable/arrow_detail"
-                android:layout_marginTop="14dp"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Lịch sử Đặt Tours"
-                android:textSize="20sp" />
-
-            <!-- Tài khoản và bảo mật -->
-            <TextView
-                android:id="@+id/account_security"
-                android:drawableLeft="@android:drawable/ic_lock_lock"
-                android:drawableRight="@drawable/arrow_detail"
-                android:layout_marginTop="14dp"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Tài khoản và bảo mật"
-                android:textSize="20sp" />
-
-            <!-- Quyền riêng tư -->
-            <TextView
-                android:id="@+id/privacy"
-                android:drawableLeft="@android:drawable/ic_menu_info_details"
-                android:drawableRight="@drawable/arrow_detail"
-                android:layout_marginTop="14dp"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:text="Quyền riêng tư"
-                android:textSize="20sp" />
-        </LinearLayout>
-
+        <TextView
+            android:id="@+id/privacy"
+            android:drawableLeft="@android:drawable/ic_menu_info_details"
+            android:drawableRight="@drawable/arrow_detail"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Quyền riêng tư"
+            android:textSize="20sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
