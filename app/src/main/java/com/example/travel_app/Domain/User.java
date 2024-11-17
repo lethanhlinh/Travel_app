@@ -3,14 +3,17 @@ package com.example.travel_app.Domain;
 import java.io.Serializable;
 
 public class User implements Serializable {
-    private String email;
-    private String password;
-    private String fullName;
-    private String phone;
-    private String ticket;
-    private double point;
     private String address;
+    private String email;
+    private String fullName;
+    private String password;
+    private String phone;
+    private double point;
+    private String ticket;
     private String pic;
+
+    public User() {
+    }
 
     public String getEmail() {
         return email;

@@ -1,71 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="@drawable/bg_login_signup">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="10dp">
+        android:paddingBottom="10dp">
 
+        <!-- Tiêu đề ĐĂNG KÍ TÀI KHOẢN -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
             android:text="ĐĂNG KÍ TÀI KHOẢN"
             android:fontFamily="@font/sourcesanspro_bold"
             android:textColor="#02182E"
             android:textSize="40sp"
             android:textStyle="bold" />
 
+        <!-- Form đăng ký -->
         <LinearLayout
-            android:layout_width="340dp"
+            android:id="@+id/formLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_marginTop="120dp"
+            android:padding="16dp"
+            android:layout_marginHorizontal="24dp"
             android:clipToPadding="false"
-            android:layout_marginTop="20dp"
             android:paddingBottom="30dp">
 
+            <!-- Họ và tên -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Họ và tên"
                 android:fontFamily="@font/sourcesanspro_regular"
-                android:textColor="@color/black" />
-
+                android:textColor="@color/black"
+                android:textSize="18dp"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/hoTenLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Quan_Linh_Viet">
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/hoTenTxt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/sourcesanspro_regular"
-                    android:padding="10dp"
-                    android:inputType="textEmailAddress"
-                    android:background="@drawable/edit_text_background" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Email"
-                android:fontFamily="@font/sourcesanspro_regular"
-                android:textColor="@color/black" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emailLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="youremail@example.com">
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/emailTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/sourcesanspro_regular"
@@ -73,12 +56,34 @@
                     android:inputType="textPersonName"
                     android:background="@drawable/edit_text_background" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Trường Số Điện Thoại -->
+            <!-- Email -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="18dp"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/black" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="youremail@example.com">
+                <EditText
+                    android:id="@+id/emailTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:inputType="textEmailAddress"
+                    android:background="@drawable/edit_text_background" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- Số điện thoại -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Số điện thoại"
+                android:textSize="18dp"
                 android:fontFamily="@font/sourcesanspro_regular"
                 android:textColor="@color/black"
                 android:layout_marginTop="16dp" />
@@ -87,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="0123456789">
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/phoneTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -96,68 +101,56 @@
                     android:inputType="phone"
                     android:background="@drawable/edit_text_background" />
             </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Trường Mật Khẩu -->
+            <!-- Mật khẩu -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Password"
-                android:fontFamily="@font/sourcesanspro_regular"
+                android:textSize="18dp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:layout_marginTop="16dp" />
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/passWordLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="********">
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/passWordTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sourcesanspro_regular"
                     android:padding="10dp"
                     android:inputType="textPassword"
+                    android:fontFamily="@font/sourcesanspro_regular"
                     android:background="@drawable/edit_text_background" />
             </com.google.android.material.textfield.TextInputLayout>
-
+            <!-- Xác nhận mật khẩu -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Confirm Password"
-                android:fontFamily="@font/sourcesanspro_regular"
+                android:textSize="18dp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/sourcesanspro_regular"
                 android:layout_marginTop="16dp" />
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/confirmPwLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="********">
-                <com.google.android.material.textfield.TextInputEditText
+                <EditText
                     android:id="@+id/confirmPwTxt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/sourcesanspro_regular"
                     android:padding="10dp"
                     android:inputType="textPassword"
-                    android:background="@drawable/edit_text_background" />
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:background="@drawable/edit_text_background"/>
             </com.google.android.material.textfield.TextInputLayout>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnSignUp"
-                android:layout_width="match_parent"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:text="SIGN UP"
-                android:fontFamily="@font/sourcesanspro_bold"
-                android:background="@drawable/btn_default_bg"
-                android:textColor="@android:color/white"
-                android:layout_marginTop="20dp"
-                android:padding="10dp" />
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_marginTop="16dp"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView21"
@@ -165,7 +158,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="15dp"
-                    android:textSize="15dp"
+                    android:textSize="18dp"
                     android:text="Bạn đã có tài khoản?"
                     android:fontFamily="@font/sourcesanspro_italic"
                     android:textColor="@android:color/black"
@@ -179,40 +172,53 @@
                     android:layout_marginStart="16dp"
                     android:text="@string/text_SignIn"
                     android:textColor="@color/Red"
-                    android:textSize="15dp"
+                    android:textSize="18dp"
                     android:fontFamily="@font/sourcesanspro_bold"
                     android:background="?attr/selectableItemBackground"
                     app:layout_constraintBottom_toBottomOf="@+id/textView21"
                     app:layout_constraintStart_toEndOf="@+id/textView21"
                     app:layout_constraintTop_toTopOf="@+id/textView21" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
+            <!-- Nút SIGN UP -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SIGN UP"
+                android:fontFamily="@font/sourcesanspro_bold"
+                android:background="@drawable/btn_default_bg"
+                android:textColor="@android:color/white"
+                android:layout_marginTop="20dp"
+                android:padding="10dp" />
         </LinearLayout>
 
+        <!-- TextView Đăng ký với -->
         <TextView
-            android:id="@+id/textView26"
+            android:id="@+id/tvRegisterWith"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Đăng kí với"
+            android:layout_below="@id/formLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="Đăng ký với"
             android:fontFamily="@font/sourcesanspro_italic"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp" />
+            android:textColor="#0B1B6D"
+            android:textSize="20dp" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="4dp"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvRegisterWith"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnGoogle"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginEnd="8dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/btn_default_bg"
                 android:drawableLeft="@drawable/ic_google"
                 android:drawablePadding="10dp"
@@ -227,8 +233,6 @@
                 android:id="@+id/btnFacebook"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="32dp"
                 android:background="@drawable/btn_default_bg"
                 android:drawableLeft="@drawable/ic_facebook"
                 android:drawablePadding="10dp"
@@ -239,7 +243,5 @@
                 android:textAlignment="textStart"
                 android:textAllCaps="false" />
         </LinearLayout>
-
-    </LinearLayout>
-
+    </RelativeLayout>
 </ScrollView>

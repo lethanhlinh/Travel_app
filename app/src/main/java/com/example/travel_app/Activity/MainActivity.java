@@ -11,6 +11,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
 import com.example.travel_app.Adapter.ViewPagerAdapter;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,11 +20,17 @@ import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 public class MainActivity extends BaseActivity {
     private ViewPager viewPager;
     private BottomNavigationView bottomNavigationView;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        user = new User();
+        getIntentExtra();
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("user", user);
 
         // Kiểm tra trạng thái đăng nhập
         SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
@@ -41,7 +48,7 @@ public class MainActivity extends BaseActivity {
         bottomNavigationView = findViewById(R.id.thanhmenu);
 
         //thiet lap viewpagervoi adapter
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, user);
         viewPager.setAdapter(adapter);
 
         viewPager.addOnPageChangeListener(new OnPageChangeListener() {
@@ -91,5 +98,8 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
+    }
+    public void getIntentExtra(){
+        user = (User) getIntent().getParcelableExtra("user");
     }
 }
