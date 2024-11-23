@@ -15,7 +15,6 @@ import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.ismaeldivita.chipnavigation.ChipNavigationBar;
 
 public class MainActivity extends BaseActivity {
     private ViewPager viewPager;
@@ -25,12 +24,11 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        user = new User();
-        getIntentExtra();
+        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("user", user);
+        viewPager = binding.viewPager;
+        bottomNavigationView = binding.thanhmenu;
 
         // Kiểm tra trạng thái đăng nhập
         SharedPreferences sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
@@ -44,22 +42,22 @@ public class MainActivity extends BaseActivity {
             return;
         }
 
-        viewPager = findViewById(R.id.viewPager);
-        bottomNavigationView = findViewById(R.id.thanhmenu);
-
-        //thiet lap viewpagervoi adapter
+        // Nhận thông tin người dùng từ Intent
+        user = (User) getIntent().getSerializableExtra("user");
+        // Thiết lập ViewPager với adapter
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, user);
         viewPager.setAdapter(adapter);
 
+        // Thiết lập sự kiện cho ViewPager
         viewPager.addOnPageChangeListener(new OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
+                // Không cần xử lý
             }
 
             @Override
             public void onPageSelected(int position) {
-                switch (position){
+                switch (position) {
                     case 0:
                         bottomNavigationView.setSelectedItemId(R.id.menu_home);
                         break;
@@ -77,10 +75,11 @@ public class MainActivity extends BaseActivity {
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
+                // Không cần xử lý
             }
         });
 
+        // Thiết lập sự kiện cho BottomNavigationView
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -99,7 +98,8 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-    public void getIntentExtra(){
-        user = (User) getIntent().getParcelableExtra("user");
+
+    public User getUser() {
+        return user;  // `user` đã được khởi tạo trong `onCreate()`
     }
 }

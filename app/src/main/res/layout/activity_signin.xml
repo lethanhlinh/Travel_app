@@ -106,7 +106,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:textSize="15dp"
-
                 android:background="?attr/selectableItemBackground"
                 android:text="@string/text_SignUp"
                 android:textColor="@color/Red"

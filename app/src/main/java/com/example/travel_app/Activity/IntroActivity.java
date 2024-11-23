@@ -1,7 +1,6 @@
 package com.example.travel_app.Activity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.example.travel_app.Domain.User;
@@ -16,16 +15,20 @@ public class IntroActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityIntroBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        // Gọi getIntentExtra() trong onCreate() để đảm bảo userLogin được cập nhật
         getIntentExtra();
 
         binding.introBtn.setOnClickListener(v -> {
             Intent intent = new Intent(IntroActivity.this, MainActivity.class);
+            // Truyền userLogin sang MainActivity
             intent.putExtra("user", userLogin);
             startActivity(intent);
         });
     }
 
     public void getIntentExtra(){
-        userLogin = (User) getIntent().getParcelableExtra("user");
+        userLogin = (User) getIntent().getSerializableExtra("user");
     }
 }
+
