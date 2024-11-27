@@ -60,7 +60,8 @@ public class ProfileFragment extends Fragment {
     public static ProfileFragment newInstance(User user) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
-        args.putParcelable("user", (Parcelable) user);
+    //    args.putParcelable("user", (Parcelable) user);
+       args.putSerializable("user", user);
         fragment.setArguments(args);
         return fragment;
     }
@@ -69,7 +70,9 @@ public class ProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            user = getArguments().getParcelable("user");
+          //  user = getArguments().getParcelable("user");
+            user = (User) getArguments().getSerializable("user");
+
         }
 
         // Initialize Firebase components

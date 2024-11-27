@@ -47,6 +47,16 @@ public class SignInActivity extends BaseActivity {
             }
         });
 
+        binding.btnSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (isValidInput()) {
+                    String tenDangNhap = binding.tenDangNhapTxt.getText().toString();
+                    String password = binding.passWordTxt.getText().toString();
+                    loadUserLoginFromFirebase(tenDangNhap, password);
+                }
+            }
+        });
         //Nếu quên mật khẩu thì chuyển sang trang đổi password
         binding.TxtforgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +66,8 @@ public class SignInActivity extends BaseActivity {
             }
         });
     }
+
+
 
     public boolean isValidInput() {
         String tenDangNhap = binding.tenDangNhapTxt.getText().toString();

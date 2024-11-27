@@ -3,6 +3,7 @@ package com.example.travel_app.Adapter;
 import static java.security.AccessController.getContext;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -34,10 +35,18 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
             case 2:
                 return new FavoriteFragment();
             case 3:
+//                // Truyền user vào ProfileFragment bằng Bundle
+//                ProfileFragment profileFragment = new ProfileFragment();
+//                Bundle bundle = new Bundle();
+//                bundle.putSerializable("user", user);
+//                profileFragment.setArguments(bundle);
+//                return profileFragment;
                 // Truyền user vào ProfileFragment bằng Bundle
                 ProfileFragment profileFragment = new ProfileFragment();
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("user", user);
+             //   bundle.putParcelable("user", (Parcelable) user);
+
+                bundle.putSerializable("user", user); // Sử dụng putParcelable
                 profileFragment.setArguments(bundle);
                 return profileFragment;
             default:
