@@ -128,7 +128,7 @@ public class SignUpActivity extends BaseActivity {
         if (!Patterns.PHONE.matcher(phone).matches() || !phone.startsWith("0")) {
             binding.phoneLayout.setError("Số điện thoại không hợp lệ");
             return false;
-        } else if (isPhoneExist(Integer.parseInt(phone))) {
+        } else if (isPhoneExist(phone)) {
             binding.phoneLayout.setError("Số điện thoại đã tồn tại");
             return false;
         }
@@ -157,7 +157,7 @@ public class SignUpActivity extends BaseActivity {
         user.setEmail(email);
         user.setPassword(password);
         user.setFullName(fullName);
-        user.setPhone(Integer.parseInt(phone));
+        user.setPhone(phone);
         user.setPoint(200);
         user.setTicket("null");
         user.setPic(encodeImageToBase64(R.drawable.user_image));
@@ -205,9 +205,10 @@ public class SignUpActivity extends BaseActivity {
         return false;
     }
 
-    private boolean isPhoneExist(long phone) {
+    private boolean isPhoneExist(String phone) {
         for (User user : listUser) {
-            if (user.getPhone() == phone) {
+            if (user.getPhone().equals(phone)) {
+
                 return true;
             }
         }

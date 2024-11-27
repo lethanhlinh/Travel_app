@@ -7,7 +7,7 @@ public class User implements Serializable {
     private String email;
     private String fullName;
     private String password;
-    private long phone;
+    private String phone;
     private double point;
     private String ticket;
     private String pic;
@@ -39,11 +39,11 @@ public class User implements Serializable {
         this.fullName = fullName;
     }
 
-    public long getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(long phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
