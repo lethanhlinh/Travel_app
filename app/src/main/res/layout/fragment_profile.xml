@@ -66,6 +66,7 @@
             android:drawableLeft="@android:drawable/ic_menu_myplaces"
             android:drawableRight="@drawable/arrow_detail"
             android:layout_marginTop="32dp"
+            android:drawablePadding="10dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Chỉnh sửa thông tin"
@@ -78,6 +79,7 @@
             android:layout_marginTop="14dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:drawablePadding="10dp"
             android:text="Cài đặt"
             android:textSize="20sp" />
 
@@ -89,6 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Lịch sử Đặt Tours"
+            android:drawablePadding="10dp"
             android:textSize="20sp" />
 
         <TextView
@@ -99,6 +102,7 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Tài khoản và bảo mật"
+            android:drawablePadding="10dp"
             android:textSize="20sp" />
 
         <TextView
@@ -109,6 +113,17 @@
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:text="Quyền riêng tư"
+            android:drawablePadding="10dp"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/logout"
+            android:drawableLeft="@android:drawable/ic_dialog_info"
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:text="Đăng Xuất"
+            android:layout_gravity="center"
+            android:drawablePadding="10dp"
             android:textSize="20sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
