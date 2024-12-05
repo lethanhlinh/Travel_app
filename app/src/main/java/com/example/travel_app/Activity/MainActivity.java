@@ -12,6 +12,7 @@ import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
 import com.example.travel_app.Adapter.ViewPagerAdapter;
 import com.example.travel_app.Domain.User;
+import com.example.travel_app.Fragment.ProfileFragment;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityMainBinding;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -44,6 +45,8 @@ public class MainActivity extends BaseActivity {
 
         // Nhận thông tin người dùng từ Intent
         user = (User) getIntent().getSerializableExtra("user");
+        //Nhận userKey để truyền vào ProfileFragment
+        String userKey = getIntent().getStringExtra("userKey");
         // Thiết lập ViewPager với adapter
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, user);
         viewPager.setAdapter(adapter);
@@ -93,6 +96,14 @@ public class MainActivity extends BaseActivity {
                     viewPager.setCurrentItem(2);
                 } else if (itemId == R.id.menu_profile) {
                     viewPager.setCurrentItem(3);
+
+                    // Tạo ProfileFragment
+                    ProfileFragment profileFragment = new ProfileFragment();
+
+                    // Tạo Bundle và truyền userKey
+                    Bundle bundle = new Bundle();
+                    bundle.putString("userKey", userKey); // Truyền userKey vào Bundle
+                    profileFragment.setArguments(bundle);
                 }
                 return true;
             }

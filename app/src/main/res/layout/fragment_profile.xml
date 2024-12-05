@@ -116,7 +116,7 @@
             android:drawablePadding="10dp"
             android:textSize="20sp" />
         <TextView
-            android:id="@+id/logout"
+            android:id="@+id/btn_logout"
             android:drawableLeft="@android:drawable/ic_dialog_info"
             android:layout_marginTop="14dp"
             android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package com.example.travel_app.Fragment;
 import static android.app.Activity.RESULT_OK;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -18,6 +19,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
+import com.example.travel_app.Activity.EditProfileActivity;
+import com.example.travel_app.Activity.SignInActivity;
 import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.FragmentProfileBinding;
@@ -46,6 +49,7 @@ public class ProfileFragment extends Fragment {
     private StorageReference storageReference;
     private FirebaseDatabase database;
     private DatabaseReference userRef;
+    private String userKey;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -72,7 +76,7 @@ public class ProfileFragment extends Fragment {
         if (getArguments() != null) {
           //  user = getArguments().getParcelable("user");
             user = (User) getArguments().getSerializable("user");
-
+            userKey = getArguments().getString("userKey");//Lấy userKey
         }
 
         // Initialize Firebase components
@@ -104,6 +108,31 @@ public class ProfileFragment extends Fragment {
 
         binding.btnUploadImage.setOnClickListener(view -> {
             openImagePicker();
+        });
+
+        binding.btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Xóa thông tin đăng nhập từ SharedPreferences
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyAppPrefs", getContext().MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.clear();  // Xóa tất cả dữ liệu
+                editor.apply();
+
+                // Chuyển hướng người dùng về màn hình đăng nhập
+                Intent intent = new Intent(getContext(), SignInActivity.class);
+                startActivity(intent);
+                getActivity().finish(); // Đảm bảo đóng Fragment hiện tại để không quay lại sau khi đăng xuất
+            }
+        });
+        binding.editInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), EditProfileActivity.class);
+                intent.putExtra("user", user);
+                intent.putExtra("userKey", userKey);//Truyền userKey
+                startActivity(intent);
+            }
         });
     }
 

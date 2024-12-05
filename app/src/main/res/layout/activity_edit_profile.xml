@@ -1,186 +1,182 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#B2E3FF"
     tools:context=".Activity.EditProfileActivity">
 
-
-    <ImageView
-        android:id="@+id/backBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back_white" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="58dp"
-        android:text="Thông tin tài khoản"
-        android:fontFamily="@font/sourcesanspro_regular"
-        android:textSize="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/pic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_above="@+id/linearLayout2"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-
-        android:layout_marginBottom="18dp"
-        android:foregroundGravity="center"
-        android:src="@drawable/messi"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.167" />
-
     <LinearLayout
-        android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginHorizontal="24dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="63dp"
-        android:clipToPadding="false"
         android:orientation="vertical"
-        android:padding="16dp"
-        android:paddingBottom="30dp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="266dp">
+        android:padding="16dp">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Họ và tên"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/hoTenTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:hint="Quan_Linh_Viet"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:inputType="textEmailAddress"
-            android:padding="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Email"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/tenDangNhapTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:hint="youremail@example.com"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:inputType="textEmailAddress"
-            android:padding="10dp" />
-
-        <!-- Trường Số Điện Thoại -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Số điện thoại"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/phoneTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:hint="0123456789"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:inputType="phone"
-            android:padding="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Ngày sinh"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/nsinhTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:hint="dd/mm/yy"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:inputType="phone"
-            android:padding="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Password"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/passWordTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:hint="********"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:inputType="textPassword"
-            android:padding="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Confirm Password"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:textColor="@color/black" />
-
-        <EditText
-            android:id="@+id/confirmPwTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edit_text_background"
-            android:hint="********"
-            android:fontFamily="@font/sourcesanspro_regular"
-            android:inputType="textPassword"
-            android:padding="10dp" />
-
-        <Button
+        <ImageView
+            android:id="@+id/backBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="#1D84D7"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Thông tin tài khoản"
             android:fontFamily="@font/sourcesanspro_bold"
-            android:text="Lưu Thay đổi" />
+            android:textSize="32sp"
+            android:layout_gravity="center_horizontal" /> <!-- Căn giữa theo chiều ngang -->
+
+        <ImageView
+            android:id="@+id/pic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="18dp"
+            android:src="@drawable/messi"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:clipToPadding="false">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Họ và tên"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/hoTenTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="Quan_Linh_Viet"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/tenDangNhapTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="youremail@example.com"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:inputType="textEmailAddress"
+                android:padding="10dp" />
+
+            <!-- Trường Số Điện Thoại -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Số điện thoại"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/phoneTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="0123456789"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:inputType="phone"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Ngày sinh"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/black" />
+
+            <EditText
+                android:id="@+id/nsinhTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edit_text_background"
+                android:hint="dd/mm/yy"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:inputType="phone"
+                android:padding="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Old Password"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/black" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/oldPassLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/oldPassTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="********"
+                    android:inputType="textPassword"
+                    android:padding="10dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="New Password"
+                android:fontFamily="@font/sourcesanspro_regular"
+                android:textColor="@color/black" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/newPassLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/newPassTxt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edit_text_background"
+                    android:fontFamily="@font/sourcesanspro_regular"
+                    android:hint="********"
+                    android:inputType="textPassword"
+                    android:padding="10dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btn_savechanges"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#1D84D7"
+                android:fontFamily="@font/sourcesanspro_bold"
+                android:text="Lưu Thay đổi" />
+
+        </LinearLayout>
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>

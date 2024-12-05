@@ -102,7 +102,8 @@ public class SignInActivity extends BaseActivity {
                     listUsers.add(issue.getValue(User.class));
                 }
 
-                for (User user : listUsers) {
+                for (int i =0; i< listUsers.size(); i++) {
+                    User user = listUsers.get(i);
                     // Kiểm tra email
                     if (user.getEmail().equals(tenDangNhap)) {
                         if (user.getPassword().equals(password)) {
@@ -115,6 +116,7 @@ public class SignInActivity extends BaseActivity {
                             Toast.makeText(SignInActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignInActivity.this, IntroActivity.class);
                             intent.putExtra("user", userLogin);
+                            intent.putExtra("userKey", i);
                             startActivity(intent);
                             finish();
                             return;
@@ -136,6 +138,7 @@ public class SignInActivity extends BaseActivity {
                             Toast.makeText(SignInActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignInActivity.this, IntroActivity.class);
                             intent.putExtra("user", userLogin);
+                            intent.putExtra("userKey", String.valueOf(i));
                             startActivity(intent);
                             finish();
                             return;
