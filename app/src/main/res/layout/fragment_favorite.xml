@@ -5,7 +5,7 @@
     android:background="#7FD0E9"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Activity.FavoriteActivity">
+    tools:context=".Fragment.FavoriteFragment">
     <!-- TextView nằm trên cùng -->
     <TextView
         android:id="@+id/titleTextView"

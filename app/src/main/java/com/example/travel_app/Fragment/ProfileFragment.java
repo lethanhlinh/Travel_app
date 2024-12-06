@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Activity.EditProfileActivity;
+import com.example.travel_app.Activity.HistoryActivity;
 import com.example.travel_app.Activity.SignInActivity;
 import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
@@ -106,10 +107,12 @@ public class ProfileFragment extends Fragment {
                     .into(binding.profileImage);
         }
 
+        //Set su kien cho nut Upload image
         binding.btnUploadImage.setOnClickListener(view -> {
             openImagePicker();
         });
 
+        //Set su kien cho nut Dang Xuat
         binding.btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,12 +128,22 @@ public class ProfileFragment extends Fragment {
                 getActivity().finish(); // Đảm bảo đóng Fragment hiện tại để không quay lại sau khi đăng xuất
             }
         });
+        //Set su kien cho nut edit
         binding.editInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), EditProfileActivity.class);
                 intent.putExtra("user", user);
                 intent.putExtra("userKey", userKey);//Truyền userKey
+                startActivity(intent);
+            }
+        });
+
+        //Set su kien cho nut Book tour
+        binding.booktour.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), HistoryActivity.class);
                 startActivity(intent);
             }
         });

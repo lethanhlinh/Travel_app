@@ -1,6 +1,7 @@
 package com.example.travel_app.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.net.Uri;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.databinding.ActivityTicketBinding;
+import com.google.gson.Gson;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -61,6 +63,7 @@ public class TicketActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 captureLayoutAsImage();
+                addHistory(object);
             }
         });
     }
@@ -106,5 +109,17 @@ public class TicketActivity extends BaseActivity {
             e.printStackTrace();
             Toast.makeText(TicketActivity.this, "Lỗi khi lưu ảnh", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void addHistory(ItemDomain object) {
+        SharedPreferences sharedPreferences = getSharedPreferences("HistoryItems", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // Chuyển đối tượng ItemDomain thành JSON
+        String json = new Gson().toJson(object);
+
+        // Lưu vào SharedPreferences với key là ID của item
+        editor.putString(object.getTitle(), json);
+        editor.apply();
     }
 }

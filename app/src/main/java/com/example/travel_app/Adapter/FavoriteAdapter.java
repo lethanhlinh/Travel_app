@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Activity.DetailActivity;
+import com.example.travel_app.Activity.HistoryActivity;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.Fragment.FavoriteFragment;
 import com.example.travel_app.databinding.ViewholderFavoriteBinding;
@@ -28,6 +29,9 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
     OnFavoriteChangeListener favoriteChangeListener;
 
     public FavoriteAdapter(ArrayList<ItemDomain> items, FavoriteFragment favoriteFragment) {
+        this.items = items;
+    }
+    public FavoriteAdapter(ArrayList<ItemDomain> items, HistoryActivity historyActivity) {
         this.items = items;
     }
 
