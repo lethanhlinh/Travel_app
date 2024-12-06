@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FBFBFB"
+    android:padding="16dp"
+
+
+    android:gravity="center_horizontal"
+    android:layout_gravity="top"> <!-- Nội dung nằm phía trên -->
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="TRAVEL APP"
+        android:paddingTop="20dp"
+        android:textColor="@color/orange_light"
+        android:textSize="32sp"
+        android:fontFamily="serif-monospace"
+        android:textStyle="bold" />
+
+    <!-- Group Name -->
+    <TextView
+        android:id="@+id/groupNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nhóm 1:"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ứng dụng đặt vé du lịch"
+        android:textColor="@color/blue"
+        android:textSize="25sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Class Code -->
+    <TextView
+        android:id="@+id/classCodeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lớp học phần: 124LTTD01"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Student List -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"> <!-- Căn giữa nội dung sinh viên -->
+
+        <!-- Student 1 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. Nguyễn Duy Việt"
+            android:textColor="@color/orange_light"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lớp: 124LTTD01"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã sinh viên: 22115053122150"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp" />
+
+
+        <!-- Student 2 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2. Lê Nguyễn Thành Linh"
+            android:textColor="@color/orange_light"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lớp: 124LTTD04"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã sinh viên: 22115053122121"
+            android:textSize="20sp"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Student 3 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3. Lê Nguyễn Xuân Quân"
+            android:textColor="@color/orange_light"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lớp: 124LTTD04"
+            android:textSize="20sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mã sinh viên: 22115053122132"
+            android:textSize="20sp"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

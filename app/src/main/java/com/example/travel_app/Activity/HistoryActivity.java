@@ -61,7 +61,7 @@ public class HistoryActivity extends BaseActivity implements FavoriteAdapter.OnF
 
         // Nếu danh sách trống, hiển thị thông báo
         if (historyItems.isEmpty()) {
-            Toast.makeText(this, "Chưa có sản phẩm yêu thích!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Bạn chưa đặt tour nào!", Toast.LENGTH_SHORT).show();
         }
     }
 }

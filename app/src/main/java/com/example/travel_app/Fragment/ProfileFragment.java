@@ -22,6 +22,8 @@ import com.bumptech.glide.Glide;
 import com.example.travel_app.Activity.EditProfileActivity;
 import com.example.travel_app.Activity.HistoryActivity;
 import com.example.travel_app.Activity.SignInActivity;
+import com.example.travel_app.Activity.XemTVNhomActivity;
+import com.example.travel_app.Chat.ChatActivity;
 import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.FragmentProfileBinding;
@@ -147,6 +149,24 @@ public class ProfileFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        //Set su kien cho nut Xem thanh vien nhom
+        binding.xemThanhVien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), XemTVNhomActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.privacy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), ChatActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void openImagePicker() {

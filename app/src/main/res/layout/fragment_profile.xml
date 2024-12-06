@@ -73,14 +73,14 @@
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/setting"
+            android:id="@+id/xemThanhVien"
             android:drawableLeft="@android:drawable/ic_menu_set_as"
             android:drawableRight="@drawable/arrow_detail"
             android:layout_marginTop="14dp"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:drawablePadding="10dp"
-            android:text="Cài đặt"
+            android:text="Xem thông tin thành viên nhóm"
             android:textSize="20sp" />
 
         <TextView
