@@ -6,6 +6,7 @@
     </style>
 
     <style name="Theme.Travel_app" parent="Base.Theme.Travel_app" />
+
     <style name="ShapeAppearanceOverlay.App.circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20dp</item>

@@ -1,6 +1,7 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -40,53 +41,70 @@
         <!-- RecyclerView Section (Horizontal Scroll) -->
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewCategory"
+            android:id="@+id/recyclerViewExchangeGifts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tvXu"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tvXu" >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <ProgressBar
+            android:id="@+id/progressBarExchangeGifts"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerViewExchangeGifts"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvXu" />
 
         <TextView
             android:id="@+id/tvNhiemVu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Quà tặng nổi bật"
+            android:textColor="@android:color/black"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
-            app:layout_constraintTop_toBottomOf="@id/recyclerViewCategory"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp" />
-
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerHorizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/tvNhiemVu"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            tools:layout_editor_absoluteY="280dp" />
+
 
         <!-- Static Rewards Section -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleViewPresent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvNhiemVu" />
+
+        <ProgressBar
+            android:id="@+id/progressBarPresent"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/recycleViewPresent"
+            app:layout_constraintEnd_toEndOf="@+id/recycleViewPresent"
+            app:layout_constraintStart_toStartOf="@+id/recycleViewPresent"
+            app:layout_constraintTop_toTopOf="@+id/recycleViewPresent" />
+
         <TextView
             android:id="@+id/tvStaticRewardsTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Chỉ có tại Rewards"
+            android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@android:color/black"
-            app:layout_constraintTop_toBottomOf="@id/recyclerHorizontal"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="554dp" />
 
         <LinearLayout
             android:id="@+id/staticRewardsContainer"

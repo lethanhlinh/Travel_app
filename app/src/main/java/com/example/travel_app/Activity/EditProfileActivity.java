@@ -25,10 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class EditProfileActivity extends BaseActivity {
     ActivityEditProfileBinding binding;
     private User user;
-    private int userKey;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +57,6 @@ public class EditProfileActivity extends BaseActivity {
 
     public void getUserFromIntent() {
         user = (User) getIntent().getSerializableExtra("user");
-        userKey = getIntent().getIntExtra("userKey", -1);
-        Log.d("EditProfileActivity", "userKey: " + userKey);
     }
 
     public void UpdateProfile(){
@@ -75,21 +74,26 @@ public class EditProfileActivity extends BaseActivity {
                     user.setPhone(phone);
                     user.setPassword(newPassWord);
 
-                    if (userKey != -1) {
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("User");
+                    // Lấy userKey bằng Callback
+                    getUserKey(user, new UserCallback() {
+                        @Override
+                        public void onUserKeyFound(String userKey) {
+                            if (userKey != null) {
+                                DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("User");
+                                myRef.child(userKey)
+                                        .setValue(user)
+                                        .addOnSuccessListener(aVoid -> Toast.makeText(EditProfileActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show())
+                                        .addOnFailureListener(e -> Toast.makeText(EditProfileActivity.this, "Lỗi khi cập nhật", Toast.LENGTH_SHORT).show());
+                            } else {
+                                Toast.makeText(EditProfileActivity.this, "Không tìm thấy người dùng.", Toast.LENGTH_SHORT).show();
+                            }
+                        }
 
-                        myRef.child(String.valueOf(userKey)) // Dùng userKey (chuỗi hoặc số) để cập nhật đúng
-                                .setValue(user)
-                                .addOnSuccessListener(aVoid -> {
-                                    Toast.makeText(EditProfileActivity.this, "Cập nhật thành công", Toast.LENGTH_SHORT).show();
-                                })
-                                .addOnFailureListener(e -> {
-                                    Toast.makeText(EditProfileActivity.this, "Lỗi khi cập nhật", Toast.LENGTH_SHORT).show();
-                                });
-                    } else {
-                        Toast.makeText(EditProfileActivity.this, "ID người dùng không hợp lệ", Toast.LENGTH_SHORT).show();
-                    }
+                        @Override
+                        public void onError(String error) {
+                            Toast.makeText(EditProfileActivity.this, "Lỗi: " + error, Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             }
         });
@@ -116,6 +120,33 @@ public class EditProfileActivity extends BaseActivity {
         binding.oldPassLayout.setError(null);
         binding.newPassLayout.setError(null);
         return true;
+    }
+
+    public void getUserKey(User user, UserCallback callback) {
+        DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("User");
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot child : snapshot.getChildren()) {
+                    User currentUser = child.getValue(User.class);
+                    if (currentUser != null && currentUser.equals(user)) {
+                        callback.onUserKeyFound(child.getKey()); // Trả về userKey
+                        return;
+                    }
+                }
+                callback.onUserKeyFound(null); // Không tìm thấy
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                callback.onError(error.getMessage());
+            }
+        });
+    }
+
+    public interface UserCallback {
+        void onUserKeyFound(String userKey);
+        void onError(String error);
     }
 
     public boolean isValidPassword(@NonNull String password) {

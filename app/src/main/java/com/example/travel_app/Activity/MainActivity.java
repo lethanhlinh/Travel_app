@@ -45,8 +45,6 @@ public class MainActivity extends BaseActivity {
 
         // Nhận thông tin người dùng từ Intent
         user = (User) getIntent().getSerializableExtra("user");
-        //Nhận userKey để truyền vào ProfileFragment
-        String userKey = getIntent().getStringExtra("userKey");
         // Thiết lập ViewPager với adapter
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, user);
         viewPager.setAdapter(adapter);
@@ -95,15 +93,7 @@ public class MainActivity extends BaseActivity {
                 } else if (itemId == R.id.menu_favorites) {
                     viewPager.setCurrentItem(2);
                 } else if (itemId == R.id.menu_profile) {
-                    viewPager.setCurrentItem(3);
-
-                    // Tạo ProfileFragment
-                    ProfileFragment profileFragment = new ProfileFragment();
-
-                    // Tạo Bundle và truyền userKey
-                    Bundle bundle = new Bundle();
-                    bundle.putString("userKey", userKey); // Truyền userKey vào Bundle
-                    profileFragment.setArguments(bundle);
+                    viewPager.setCurrentItem(3);;
                 }
                 return true;
             }

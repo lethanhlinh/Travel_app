@@ -14,8 +14,10 @@ import com.example.travel_app.Adapter.CategoryAdapter;
 import com.example.travel_app.Adapter.GiftDoiQuaAdapter;
 import com.example.travel_app.Adapter.RecommendedAdapter;
 import com.example.travel_app.Domain.Category;
+import com.example.travel_app.Domain.Gift;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.R;
+import com.example.travel_app.databinding.FragmentDoiQuaBinding;
 import com.example.travel_app.databinding.FragmentTichXuBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,7 +39,7 @@ public class DoiQuaFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private FirebaseDatabase database;
-    private FragmentTichXuBinding binding; // Khai báo binding
+    private FragmentDoiQuaBinding binding; // Khai báo binding
 
 
     // TODO: Rename and change types of parameters
@@ -80,30 +82,30 @@ public class DoiQuaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding = FragmentTichXuBinding.inflate(inflater, container, false);
-        initCategory();
+        binding = FragmentDoiQuaBinding.inflate(inflater, container, false);
+        initGift();
         initRecommended();
         return binding.getRoot();
     }
 
-    private void initCategory() {
-        DatabaseReference myRef = database.getReference("Item");
+    private void initGift() {
+        DatabaseReference myRef = database.getReference("Gift");
 
-        ArrayList<ItemDomain> list = new ArrayList<>();
+        ArrayList<Gift> lists = new ArrayList<>();
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (DataSnapshot issue : snapshot.getChildren()) {
-                        list.add(issue.getValue(ItemDomain.class));
+                        lists.add(issue.getValue(Gift.class));
                     }
-                    if (!list.isEmpty()) {
-                        binding.recyclerViewCategory.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-                        RecyclerView.Adapter adapter = new GiftDoiQuaAdapter(list);
-                        binding.recyclerViewCategory.setAdapter(adapter);
+                    if (!lists.isEmpty()) {
+                        binding.recyclerViewExchangeGifts.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+                        RecyclerView.Adapter adapter = new GiftDoiQuaAdapter(lists);
+                        binding.recyclerViewExchangeGifts.setAdapter(adapter);
                     }
-                    //  binding.progressBarCategory.setVisibility(View.GONE);
+                    binding.progressBarExchangeGifts.setVisibility(View.GONE);
                 }
             }
 
@@ -115,24 +117,24 @@ public class DoiQuaFragment extends Fragment {
     }
 
     private void initRecommended() {
-        DatabaseReference myRef = database.getReference("Item");
+        DatabaseReference myRef = database.getReference("Gift");
         // binding.progressBarRecommended.setVisibility(View.VISIBLE);
 
-        ArrayList<ItemDomain> list = new ArrayList<>();
+        ArrayList<Gift> lists = new ArrayList<>();
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (DataSnapshot issue : snapshot.getChildren()) {
-                        list.add(issue.getValue(ItemDomain.class));
+                        lists.add(issue.getValue(Gift.class));
                     }
-                    if (!list.isEmpty()) {
-                        binding.recyclerHorizontal.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-                        RecyclerView.Adapter adapter = new GiftDoiQuaAdapter(list);
-                        binding.recyclerHorizontal.setAdapter(adapter);
+                    if (!lists.isEmpty()) {
+                        binding.recycleViewPresent.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+                        RecyclerView.Adapter adapter = new GiftDoiQuaAdapter(lists);
+                        binding.recycleViewPresent.setAdapter(adapter);
                     }
-                    //    binding.progressBarRecommended.setVisibility(View.GONE);
+                       binding.progressBarPresent.setVisibility(View.GONE);
                 }
             }
 

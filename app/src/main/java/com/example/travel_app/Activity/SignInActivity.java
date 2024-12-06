@@ -138,7 +138,6 @@ public class SignInActivity extends BaseActivity {
                             Toast.makeText(SignInActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(SignInActivity.this, IntroActivity.class);
                             intent.putExtra("user", userLogin);
-                            intent.putExtra("userKey", String.valueOf(i));
                             startActivity(intent);
                             finish();
                             return;

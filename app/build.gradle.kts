@@ -59,6 +59,8 @@ dependencies {
     implementation ("com.google.firebase:firebase-database:20.1.0")
     implementation ("com.facebook.android:facebook-login:12.2.0")
     implementation(libs.firebase.storage)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

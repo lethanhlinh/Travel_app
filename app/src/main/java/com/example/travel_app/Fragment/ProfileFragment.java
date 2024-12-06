@@ -52,7 +52,6 @@ public class ProfileFragment extends Fragment {
     private StorageReference storageReference;
     private FirebaseDatabase database;
     private DatabaseReference userRef;
-    private String userKey;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -79,7 +78,6 @@ public class ProfileFragment extends Fragment {
         if (getArguments() != null) {
           //  user = getArguments().getParcelable("user");
             user = (User) getArguments().getSerializable("user");
-            userKey = getArguments().getString("userKey");//Lấy userKey
         }
 
         // Initialize Firebase components
@@ -136,7 +134,6 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), EditProfileActivity.class);
                 intent.putExtra("user", user);
-                intent.putExtra("userKey", userKey);//Truyền userKey
                 startActivity(intent);
             }
         });
