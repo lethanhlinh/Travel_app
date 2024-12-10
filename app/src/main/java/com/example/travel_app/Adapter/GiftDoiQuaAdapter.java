@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Activity.DetailActivity;
 import com.example.travel_app.Activity.EditProfileActivity;
+import com.example.travel_app.Activity.GiftDetailActivity;
 import com.example.travel_app.Domain.Gift;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.databinding.ViewholderDoiquaBinding;
@@ -51,7 +52,7 @@ public class GiftDoiQuaAdapter extends RecyclerView.Adapter<GiftDoiQuaAdapter.Vi
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, DetailActivity.class);
+                Intent intent = new Intent(context, GiftDetailActivity.class);
                 intent.putExtra("object", items.get(position)); // Truyền dữ liệu item sang DetailActivity
                 context.startActivity(intent);
             }

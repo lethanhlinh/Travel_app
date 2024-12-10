@@ -37,9 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="8dp" />
 
-
         <!-- RecyclerView Section (Horizontal Scroll) -->
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewExchangeGifts"
             android:layout_width="match_parent"
@@ -47,19 +45,18 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvXu" >
-
-        </androidx.recyclerview.widget.RecyclerView>
+            app:layout_constraintTop_toBottomOf="@id/tvXu" />
 
         <ProgressBar
             android:id="@+id/progressBarExchangeGifts"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/recyclerViewExchangeGifts"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/recyclerViewExchangeGifts"
+            app:layout_constraintBottom_toBottomOf="@id/recyclerViewExchangeGifts"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvXu" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
             android:id="@+id/tvNhiemVu"
@@ -67,12 +64,12 @@
             android:layout_height="wrap_content"
             android:text="Quà tặng nổi bật"
             android:textColor="@android:color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recyclerViewExchangeGifts"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="280dp" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
 
         <!-- Static Rewards Section -->
         <androidx.recyclerview.widget.RecyclerView
@@ -80,19 +77,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvNhiemVu"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvNhiemVu" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <ProgressBar
             android:id="@+id/progressBarPresent"
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/recycleViewPresent"
-            app:layout_constraintEnd_toEndOf="@+id/recycleViewPresent"
-            app:layout_constraintStart_toStartOf="@+id/recycleViewPresent"
-            app:layout_constraintTop_toTopOf="@+id/recycleViewPresent" />
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="@id/recycleViewPresent"
+            app:layout_constraintBottom_toBottomOf="@id/recycleViewPresent"
+            app:layout_constraintEnd_toEndOf="@id/recycleViewPresent"
+            app:layout_constraintStart_toStartOf="@id/recycleViewPresent" />
 
         <TextView
             android:id="@+id/tvStaticRewardsTitle"
@@ -102,9 +100,10 @@
             android:textColor="@android:color/black"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/recycleViewPresent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="554dp" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
 
         <LinearLayout
             android:id="@+id/staticRewardsContainer"
