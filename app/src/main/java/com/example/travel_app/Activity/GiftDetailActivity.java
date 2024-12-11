@@ -52,7 +52,7 @@ public class GiftDetailActivity extends BaseActivity {
                 .load(object.getPic())
                 .into(binding.pic);
         binding.addToCartBtn.setOnClickListener(view -> {
-            Intent intent = new Intent(GiftDetailActivity.this, TicketActivity.class);
+            Intent intent = new Intent(GiftDetailActivity.this, GiftTicketActivity.class);
             intent.putExtra("object", object);
             startActivity(intent);
         });
