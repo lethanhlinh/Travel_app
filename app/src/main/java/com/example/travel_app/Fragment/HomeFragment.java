@@ -1,6 +1,9 @@
 package com.example.travel_app.Fragment;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -24,6 +27,7 @@ import com.example.travel_app.Domain.Category;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.Domain.Location;
 import com.example.travel_app.Domain.SliderItems;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.FragmentHomeBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -40,6 +44,8 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding; // Khai báo binding
     private FirebaseDatabase database;
+    private User user;
+    private Bundle userBundle;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -49,6 +55,14 @@ public class HomeFragment extends Fragment {
 
     public HomeFragment() {
         // Required empty public constructor
+    }
+    public static HomeFragment newInstance(User user) {
+        HomeFragment fragment = new HomeFragment();
+        Bundle homeBundle = new Bundle();
+
+        homeBundle.putSerializable("user", user);
+        fragment.setArguments(homeBundle);
+        return fragment;
     }
 
     public static HomeFragment newInstance(String param1, String param2) {
@@ -63,12 +77,16 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            //  user = getArguments().getParcelable("user");
+            user = (User) getArguments().getSerializable("user");
         }
+
         database = FirebaseDatabase.getInstance();
-        // Không nên gọi init ở đây vì binding chưa được khởi tạo
+
+        userBundle = new Bundle();
+        userBundle.putSerializable("user", user);
     }
 
     @Override

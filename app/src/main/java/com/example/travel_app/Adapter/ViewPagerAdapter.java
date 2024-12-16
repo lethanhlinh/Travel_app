@@ -29,25 +29,25 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new HomeFragment();
+                HomeFragment homeFragment = new HomeFragment();
+                Bundle homebundle = new Bundle();
+                homebundle.putSerializable("user", user); // Sử dụng putParcelable
+                homeFragment.setArguments(homebundle);
+                return homeFragment;
             case 1:
-                return new GiftFragment();
+                GiftFragment giftFragment = new GiftFragment();
+                Bundle giftbundle = new Bundle();
+                giftbundle.putSerializable("user", user); // Sử dụng putParcelable
+                giftFragment.setArguments(giftbundle);
+                return giftFragment;
             case 2:
                 return new FavoriteFragment();
             case 3:
-//                // Truyền user vào ProfileFragment bằng Bundle
-//                ProfileFragment profileFragment = new ProfileFragment();
-//                Bundle bundle = new Bundle();
-//                bundle.putSerializable("user", user);
-//                profileFragment.setArguments(bundle);
-//                return profileFragment;
-                // Truyền user vào ProfileFragment bằng Bundle
                 ProfileFragment profileFragment = new ProfileFragment();
-                Bundle bundle = new Bundle();
-             //   bundle.putParcelable("user", (Parcelable) user);
+                Bundle profilebundle = new Bundle();
 
-                bundle.putSerializable("user", user); // Sử dụng putParcelable
-                profileFragment.setArguments(bundle);
+                profilebundle.putSerializable("user", user); // Sử dụng putParcelable
+                profileFragment.setArguments(profilebundle);
                 return profileFragment;
             default:
                 return new HomeFragment();

@@ -67,7 +67,7 @@ public class ProfileFragment extends Fragment {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
     //    args.putParcelable("user", (Parcelable) user);
-       args.putSerializable("user", user);
+        args.putSerializable("user", user);
         fragment.setArguments(args);
         return fragment;
     }

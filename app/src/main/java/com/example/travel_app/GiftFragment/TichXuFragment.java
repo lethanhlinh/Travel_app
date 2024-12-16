@@ -15,6 +15,7 @@ import com.example.travel_app.Adapter.CategoryAdapter;
 import com.example.travel_app.Adapter.RecommendedAdapter;
 import com.example.travel_app.Domain.Category;
 import com.example.travel_app.Domain.ItemDomain;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.FragmentTichXuBinding;
 import com.google.firebase.database.DataSnapshot;
@@ -32,6 +33,7 @@ import java.util.ArrayList;
  */
 public class TichXuFragment extends Fragment {
     private FragmentTichXuBinding binding; // Khai báo binding
+    private User userLogin;
     private FirebaseDatabase database;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -70,6 +72,8 @@ public class TichXuFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            // Lấy dữ liệu userLogin từ Bundle của GiftFragment
+            userLogin = (User) getArguments().getSerializable("user");
         }
         database = FirebaseDatabase.getInstance();
     }
@@ -77,14 +81,19 @@ public class TichXuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-     //   return inflater.inflate(R.layout.fragment_tich_xu, container, false);
         binding = FragmentTichXuBinding.inflate(inflater, container, false);
         initCategory();
         initRecommended();
-        String userId = "1"; // ID của người dùng hiện tại
-        loadPoints(userId);
+
+        setVariable();
         return binding.getRoot();
+    }
+
+    private void setVariable() {
+        // Kiểm tra userLogin có khác null không trước khi sử dụng
+        if (userLogin != null) {
+            binding.txtTichXu.setText(String.valueOf(userLogin.getPoint()));
+        }
     }
 
     private void initCategory() {
@@ -104,7 +113,7 @@ public class TichXuFragment extends Fragment {
                         RecyclerView.Adapter adapter = new CategoryAdapter(list);
                         binding.recyclerViewCategory.setAdapter(adapter);
                     }
-                  //  binding.progressBarCategory.setVisibility(View.GONE);
+                    binding.progressBarCategory.setVisibility(View.GONE);
                 }
             }
 
@@ -114,29 +123,9 @@ public class TichXuFragment extends Fragment {
             }
         });
     }
-    private void loadPoints(String userId) {
-        DatabaseReference userRef = database.getReference("point");
-
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    int points = snapshot.getValue(Integer.class);
-                    binding.tvXu.setText(String.valueOf(points));
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
 
     private void initRecommended() {
         DatabaseReference myRef = database.getReference("Item");
-       // binding.progressBarRecommended.setVisibility(View.VISIBLE);
 
         ArrayList<ItemDomain> list = new ArrayList<>();
 
@@ -152,7 +141,7 @@ public class TichXuFragment extends Fragment {
                         RecyclerView.Adapter adapter = new RecommendedAdapter(list);
                         binding.recyclerHorizontal.setAdapter(adapter);
                     }
-                //    binding.progressBarRecommended.setVisibility(View.GONE);
+                    binding.progressBarRecommended.setVisibility(View.GONE);
                 }
             }
 
@@ -161,5 +150,10 @@ public class TichXuFragment extends Fragment {
                 // Xử lý lỗi nếu cần
             }
         });
+    }
+    public void getBundleExtra(){
+        // Lấy dữ liệu từ Bundle
+        Bundle bundle = getArguments();
+        userLogin = (User) bundle.getSerializable("user");
     }
 }
