@@ -1,5 +1,7 @@
 package com.example.travel_app.Activity;
 
+import static java.security.AccessController.getContext;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -11,10 +13,17 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityTicketBinding;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 
 import java.io.File;
@@ -68,7 +77,18 @@ public class TicketActivity extends BaseActivity {
                 addHistory(object);
             }
         });
+
+        binding.btnDownload.setOnClickListener(v -> {
+            String userId = "1"; // ID của người dùng, bạn có thể lấy từ session hoặc FirebaseAuth
+            int pointsToAdd = 5; // Số điểm muốn cộng thêm
+            updatePoints(userId, pointsToAdd);
+        });
+
+
     }
+
+
+
 
     private void getIntentExtra() {
         object = (ItemDomain) getIntent().getSerializableExtra("object");
@@ -138,4 +158,34 @@ public class TicketActivity extends BaseActivity {
         editor.putString(object.getTitle(), json);
         editor.apply();
     }
+
+    private void updatePoints(String userId, int pointsToAdd) {
+        DatabaseReference userRef = FirebaseDatabase.getInstance().getReference("users").child(userId);
+
+        userRef.child("point").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    // Lấy điểm hiện tại
+                    int currentPoints = snapshot.getValue(Integer.class);
+                    int updatedPoints = currentPoints + pointsToAdd;
+
+                    // Cập nhật điểm mới
+                    userRef.child("point").setValue(updatedPoints)
+                            .addOnSuccessListener(unused -> {
+                                // Thông báo thành công
+                      })
+                            .addOnFailureListener(e -> {
+                                // Xử lý lỗi
+                          });
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Xử lý lỗi
+             }
+        });
+    }
+
 }

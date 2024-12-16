@@ -82,6 +82,8 @@ public class TichXuFragment extends Fragment {
         binding = FragmentTichXuBinding.inflate(inflater, container, false);
         initCategory();
         initRecommended();
+        String userId = "1"; // ID của người dùng hiện tại
+        loadPoints(userId);
         return binding.getRoot();
     }
 
@@ -112,6 +114,25 @@ public class TichXuFragment extends Fragment {
             }
         });
     }
+    private void loadPoints(String userId) {
+        DatabaseReference userRef = database.getReference("point");
+
+        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    int points = snapshot.getValue(Integer.class);
+                    binding.tvXu.setText(String.valueOf(points));
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
     private void initRecommended() {
         DatabaseReference myRef = database.getReference("Item");
