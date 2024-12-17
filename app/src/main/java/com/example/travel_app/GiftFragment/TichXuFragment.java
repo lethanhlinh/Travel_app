@@ -11,12 +11,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.travel_app.Activity.MainActivity;
 import com.example.travel_app.Adapter.CategoryAdapter;
 import com.example.travel_app.Adapter.RecommendedAdapter;
 import com.example.travel_app.Domain.Category;
 import com.example.travel_app.Domain.ItemDomain;
 import com.example.travel_app.Domain.User;
-import com.example.travel_app.R;
 import com.example.travel_app.databinding.FragmentTichXuBinding;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +33,7 @@ import java.util.ArrayList;
  */
 public class TichXuFragment extends Fragment {
     private FragmentTichXuBinding binding; // Khai báo binding
-    private User userLogin;
+    private User user;
     private FirebaseDatabase database;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,8 +72,9 @@ public class TichXuFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-            // Lấy dữ liệu userLogin từ Bundle của GiftFragment
-            userLogin = (User) getArguments().getSerializable("user");
+        }
+        if (getActivity() instanceof MainActivity) {
+            user = ((MainActivity) getActivity()).getUser();  // Lấy User từ MainActivity
         }
         database = FirebaseDatabase.getInstance();
     }
@@ -88,14 +89,14 @@ public class TichXuFragment extends Fragment {
         setVariable();
         return binding.getRoot();
     }
-
+    //Set du lieu tu intent
     private void setVariable() {
         // Kiểm tra userLogin có khác null không trước khi sử dụng
-        if (userLogin != null) {
-            binding.txtTichXu.setText(String.valueOf(userLogin.getPoint()));
+        if (user != null) {
+            binding.txtTichXu.setText(String.valueOf(user.getPoint()));
         }
     }
-
+    //Khởi tạo danh sách Category
     private void initCategory() {
         DatabaseReference myRef = database.getReference("Category");
 
@@ -123,7 +124,7 @@ public class TichXuFragment extends Fragment {
             }
         });
     }
-
+    //Khởi tạo danh sách Recommended
     private void initRecommended() {
         DatabaseReference myRef = database.getReference("Item");
 
@@ -150,10 +151,5 @@ public class TichXuFragment extends Fragment {
                 // Xử lý lỗi nếu cần
             }
         });
-    }
-    public void getBundleExtra(){
-        // Lấy dữ liệu từ Bundle
-        Bundle bundle = getArguments();
-        userLogin = (User) bundle.getSerializable("user");
     }
 }

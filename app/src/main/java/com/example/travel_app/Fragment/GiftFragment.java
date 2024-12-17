@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.travel_app.Activity.MainActivity;
 import com.example.travel_app.Adapter.GiftViewPagerAdapter;
 import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
@@ -23,7 +24,6 @@ public class GiftFragment extends Fragment {
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private View mView;
-    private  User user;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -61,8 +61,6 @@ public class GiftFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
-            // Lấy dữ liệu userLogin từ Bundle
-            user = (User) getArguments().getSerializable("user");
         }
     }
 
@@ -73,7 +71,7 @@ public class GiftFragment extends Fragment {
         mView = inflater.inflate(R.layout.fragment_gift, container, false);
         tabLayout = mView.findViewById(R.id.tab_layout);
         viewPager = mView.findViewById(R.id.gift_viewpager);
-        GiftViewPagerAdapter adapter = new GiftViewPagerAdapter(getChildFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, user);
+        GiftViewPagerAdapter adapter = new GiftViewPagerAdapter(getChildFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPager.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(viewPager);

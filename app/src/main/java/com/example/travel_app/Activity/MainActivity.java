@@ -46,7 +46,7 @@ public class MainActivity extends BaseActivity {
         // Nhận thông tin người dùng từ Intent
         user = (User) getIntent().getSerializableExtra("user");
         // Thiết lập ViewPager với adapter
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, user);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPager.setAdapter(adapter);
 
         // Thiết lập sự kiện cho ViewPager
@@ -99,8 +99,12 @@ public class MainActivity extends BaseActivity {
             }
         });
     }
-
+    //Cho phép các activity hoặc fragment lấy dữ liệu
     public User getUser() {
         return user;  // `user` đã được khởi tạo trong `onCreate()`
+    }
+    //Cho phép các activity hoặc fragment sửa dữ liệu
+    public void setUser(User user) {
+        this.user = user;
     }
 }

@@ -18,10 +18,8 @@ import com.example.travel_app.Fragment.GiftFragment;
 import com.example.travel_app.Fragment.ProfileFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
-    private final User user;
-    public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior, User user) {
+    public ViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
-        this.user = user;
     }
 
     @NonNull
@@ -29,26 +27,13 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                HomeFragment homeFragment = new HomeFragment();
-                Bundle homebundle = new Bundle();
-                homebundle.putSerializable("user", user); // Sử dụng putParcelable
-                homeFragment.setArguments(homebundle);
-                return homeFragment;
+                return new HomeFragment();
             case 1:
-                GiftFragment giftFragment = new GiftFragment();
-                Bundle giftbundle = new Bundle();
-                giftbundle.putSerializable("user", user); // Sử dụng putParcelable
-                giftFragment.setArguments(giftbundle);
-                return giftFragment;
+                return new GiftFragment();
             case 2:
                 return new FavoriteFragment();
             case 3:
-                ProfileFragment profileFragment = new ProfileFragment();
-                Bundle profilebundle = new Bundle();
-
-                profilebundle.putSerializable("user", user); // Sử dụng putParcelable
-                profileFragment.setArguments(profilebundle);
-                return profileFragment;
+                return new  ProfileFragment();
             default:
                 return new HomeFragment();
         }

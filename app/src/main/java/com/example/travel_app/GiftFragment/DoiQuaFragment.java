@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.travel_app.Activity.MainActivity;
 import com.example.travel_app.Adapter.CategoryAdapter;
 import com.example.travel_app.Adapter.GiftDoiQuaAdapter;
 import com.example.travel_app.Adapter.GiftDoiQuaSecondAdapter;
@@ -17,6 +18,7 @@ import com.example.travel_app.Adapter.RecommendedAdapter;
 import com.example.travel_app.Domain.Category;
 import com.example.travel_app.Domain.Gift;
 import com.example.travel_app.Domain.ItemDomain;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.FragmentDoiQuaBinding;
 import com.example.travel_app.databinding.FragmentTichXuBinding;
@@ -40,6 +42,7 @@ public class DoiQuaFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private FirebaseDatabase database;
+    private User user;
     private FragmentDoiQuaBinding binding; // Khai báo binding
 
 
@@ -86,6 +89,11 @@ public class DoiQuaFragment extends Fragment {
         binding = FragmentDoiQuaBinding.inflate(inflater, container, false);
         initGift();
         initGiftSecond();
+        // Kiểm tra userLogin có khác null không trước khi sử dụng
+        if (getActivity() instanceof MainActivity) {
+            user = ((MainActivity) getActivity()).getUser();  // Lấy User từ MainActivity
+        }
+        binding.txtTichXu.setText(String.valueOf(user.getPoint()));
         return binding.getRoot();
     }
 

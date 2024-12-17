@@ -1,5 +1,6 @@
 package com.example.travel_app.Activity;
 
+import static android.app.PendingIntent.getActivity;
 import static java.security.AccessController.getContext;
 
 import android.content.Intent;
@@ -43,10 +44,15 @@ public class TicketActivity extends BaseActivity {
         binding = ActivityTicketBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        // Lấy đối tượng MainActivity và gọi phương thức getUser()
+        if (getApplicationContext() instanceof MainActivity) {
+            user = ((MainActivity) getApplicationContext()).getUser();  // Lấy User từ MainActivity
+        }
+        //Lấy du lieu tu intent
         getIntentExtra();
         setVariable();
     }
-
+    //Set du lieu tu intent
     private void setVariable() {
         Glide.with(TicketActivity.this)
                 .load(object.getPic())
@@ -78,12 +84,11 @@ public class TicketActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 captureLayoutAsImage();
-                addHistory(object);
                 addPointsUser(5.0);
             }
         });
     }
-
+    //Them diem vao user
     private void addPointsUser(double point) {
         if (user == null) {
             Toast.makeText(TicketActivity.this, "User không tồn tại", Toast.LENGTH_SHORT).show();
@@ -110,15 +115,13 @@ public class TicketActivity extends BaseActivity {
                 Toast.makeText(TicketActivity.this, "Lỗi: " + error, Toast.LENGTH_SHORT).show();
             }
         });
+        if (getApplicationContext() instanceof MainActivity) {
+            ((MainActivity) getApplicationContext()).setUser(user);  // Lấy User từ MainActivity
+        }
     }
-
-
+    //Lay du lieu tu intent
     private void getIntentExtra() {
         object = (ItemDomain) getIntent().getSerializableExtra("object");
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            user = (User) bundle.getSerializable("user");
-        }
     }
 
     // Phương thức chụp ảnh một vùng cụ thể trong layout
@@ -149,24 +152,7 @@ public class TicketActivity extends BaseActivity {
             Toast.makeText(TicketActivity.this, "Lỗi khi lưu ảnh", Toast.LENGTH_SHORT).show();
         }
     }
-
-    private void addHistory(ItemDomain object) {
-        SharedPreferences sharedPreferences = getSharedPreferences("HistoryItems", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        // Lấy danh sách hiện tại từ SharedPreferences
-        String existingHistory = sharedPreferences.getString("history_list", "[]"); // Mặc định là danh sách rỗng
-        List<ItemDomain> historyList = new Gson().fromJson(existingHistory, new TypeToken<List<ItemDomain>>(){}.getType());
-
-        // Thêm item mới vào danh sách
-        historyList.add(object);
-
-        // Chuyển danh sách thành JSON và lưu lại
-        String updatedHistory = new Gson().toJson(historyList);
-        editor.putString("history_list", updatedHistory);
-        editor.apply();
-    }
-
+    //Lấy userKey
     public void getUserKey(User user, UserCallback callback) {
         DatabaseReference myRef = FirebaseDatabase.getInstance().getReference("User");
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {

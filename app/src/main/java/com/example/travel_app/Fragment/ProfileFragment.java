@@ -21,6 +21,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Activity.EditProfileActivity;
 import com.example.travel_app.Activity.HistoryActivity;
+import com.example.travel_app.Activity.MainActivity;
 import com.example.travel_app.Activity.SignInActivity;
 import com.example.travel_app.Activity.XemTVNhomActivity;
 import com.example.travel_app.Chat.ChatActivity;
@@ -63,11 +64,11 @@ public class ProfileFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static ProfileFragment newInstance(User user) {
+    public static ProfileFragment newInstance(String param1, String param2) {
         ProfileFragment fragment = new ProfileFragment();
         Bundle args = new Bundle();
-    //    args.putParcelable("user", (Parcelable) user);
-        args.putSerializable("user", user);
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -75,9 +76,9 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-          //  user = getArguments().getParcelable("user");
-            user = (User) getArguments().getSerializable("user");
+        // Kiểm tra userLogin có khác null không trước khi sử dụng
+        if (getActivity() instanceof MainActivity) {
+            user = ((MainActivity) getActivity()).getUser();  // Lấy User từ MainActivity
         }
 
         // Initialize Firebase components

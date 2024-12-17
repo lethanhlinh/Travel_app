@@ -17,29 +17,20 @@ import com.example.travel_app.GiftFragment.DoiQuaFragment;
 import com.example.travel_app.GiftFragment.TichXuFragment;
 
 public class GiftViewPagerAdapter extends FragmentStatePagerAdapter {
-    private final User user;
-    public GiftViewPagerAdapter(@NonNull FragmentManager fm, int behavior, User user) {
+    public GiftViewPagerAdapter(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
-        this.user = user;
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        if (position == 0) {
-            TichXuFragment tichXuFragment = new TichXuFragment();
-            Bundle tichXubundle = new Bundle();
-            tichXubundle.putSerializable("user", user);
-            tichXuFragment.setArguments(tichXubundle);
-            return tichXuFragment;
-        } else if (position == 1) {
-            DoiQuaFragment doiQuaFragment = new DoiQuaFragment();
-            Bundle doiQuaBundle = new Bundle();
-            doiQuaBundle.putSerializable("user", user);
-            doiQuaFragment.setArguments(doiQuaBundle);
-            return doiQuaFragment;
-        } else {
-            throw new IllegalArgumentException("Invalid position: " + position);
+        switch (position){
+            case 0:
+                return new TichXuFragment();
+            case 1:
+                return new DoiQuaFragment();
+            default:
+                return new TichXuFragment();
         }
     }
 
