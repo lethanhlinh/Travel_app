@@ -44,10 +44,6 @@ public class TicketActivity extends BaseActivity {
         binding = ActivityTicketBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // Lấy đối tượng MainActivity và gọi phương thức getUser()
-        if (getApplicationContext() instanceof MainActivity) {
-            user = ((MainActivity) getApplicationContext()).getUser();  // Lấy User từ MainActivity
-        }
         //Lấy du lieu tu intent
         getIntentExtra();
         setVariable();
@@ -122,6 +118,7 @@ public class TicketActivity extends BaseActivity {
     //Lay du lieu tu intent
     private void getIntentExtra() {
         object = (ItemDomain) getIntent().getSerializableExtra("object");
+        user = (User) getIntent().getSerializableExtra("user");
     }
 
     // Phương thức chụp ảnh một vùng cụ thể trong layout

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Domain.Category;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ViewholderCategoryBinding;
 

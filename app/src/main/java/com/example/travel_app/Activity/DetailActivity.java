@@ -15,6 +15,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Domain.ItemDomain;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityDetailBinding;
 import com.example.travel_app.databinding.ActivityMainBinding;
@@ -26,6 +27,7 @@ import java.util.List;
 public class DetailActivity extends BaseActivity {
     ActivityDetailBinding binding;
     private ItemDomain object;
+    private User user;
     private boolean isFavorite = false;
 
     @Override
@@ -59,6 +61,8 @@ public class DetailActivity extends BaseActivity {
             Toast.makeText(DetailActivity.this, "Đã đặt vé thành công!!! Mời bạn tải vé về ngay.", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(DetailActivity.this, TicketActivity.class);
             intent.putExtra("object", object);
+            intent.putExtra("user", user);
+
             startActivity(intent);
         });
 
@@ -129,5 +133,6 @@ public class DetailActivity extends BaseActivity {
     //Lay du lieu tu intent
     private void getIntentExtra() {
         object = (ItemDomain) getIntent().getSerializableExtra("object");
+        user = (User) getIntent().getSerializableExtra("user");
     }
 }

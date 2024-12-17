@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import com.example.travel_app.Activity.MainActivity;
 import com.example.travel_app.Activity.SeeAllActivity;
 import com.example.travel_app.Adapter.CategoryAdapter;
 import com.example.travel_app.Adapter.PopularAdapter;
@@ -77,16 +78,11 @@ public class HomeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-            //  user = getArguments().getParcelable("user");
-            user = (User) getArguments().getSerializable("user");
+        // Kiểm tra userLogin có khác null không trước khi sử dụng
+        if (getActivity() instanceof MainActivity) {
+            user = ((MainActivity) getActivity()).getUser();  // Lấy User từ MainActivity
         }
-
         database = FirebaseDatabase.getInstance();
-
-        userBundle = new Bundle();
-        userBundle.putSerializable("user", user);
     }
 
     @Override
@@ -157,7 +153,7 @@ public class HomeFragment extends Fragment {
                     }
                     if (!list.isEmpty()) {
                         binding.recyclerViewRecommended.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-                        RecyclerView.Adapter adapter = new RecommendedAdapter(list);
+                        RecyclerView.Adapter adapter = new RecommendedAdapter(list, user);
                         binding.recyclerViewRecommended.setAdapter(adapter);
                     }
                     binding.progressBarRecommended.setVisibility(View.GONE);

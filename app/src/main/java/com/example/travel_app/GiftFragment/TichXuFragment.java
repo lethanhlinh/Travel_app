@@ -139,7 +139,7 @@ public class TichXuFragment extends Fragment {
                     }
                     if (!list.isEmpty()) {
                         binding.recyclerHorizontal.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-                        RecyclerView.Adapter adapter = new RecommendedAdapter(list);
+                        RecyclerView.Adapter adapter = new RecommendedAdapter(list,user);
                         binding.recyclerHorizontal.setAdapter(adapter);
                     }
                     binding.progressBarRecommended.setVisibility(View.GONE);

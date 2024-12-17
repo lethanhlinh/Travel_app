@@ -79,6 +79,10 @@ public class DoiQuaFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        // Kiểm tra userLogin có khác null không trước khi sử dụng
+        if (getActivity() instanceof MainActivity) {
+            user = ((MainActivity) getActivity()).getUser();  // Lấy User từ MainActivity
+        }
         database = FirebaseDatabase.getInstance();
     }
 
@@ -89,10 +93,7 @@ public class DoiQuaFragment extends Fragment {
         binding = FragmentDoiQuaBinding.inflate(inflater, container, false);
         initGift();
         initGiftSecond();
-        // Kiểm tra userLogin có khác null không trước khi sử dụng
-        if (getActivity() instanceof MainActivity) {
-            user = ((MainActivity) getActivity()).getUser();  // Lấy User từ MainActivity
-        }
+
         binding.txtTichXu.setText(String.valueOf(user.getPoint()));
         return binding.getRoot();
     }
