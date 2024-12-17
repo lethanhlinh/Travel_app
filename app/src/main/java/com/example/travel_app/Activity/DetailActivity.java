@@ -53,6 +53,8 @@ public class DetailActivity extends BaseActivity {
             Intent intent = new Intent(DetailActivity.this, TicketActivity.class);
             intent.putExtra("object", object);
             startActivity(intent);
+
+
         });
 
         // Kiểm tra trạng thái yêu thích từ SharedPreferences

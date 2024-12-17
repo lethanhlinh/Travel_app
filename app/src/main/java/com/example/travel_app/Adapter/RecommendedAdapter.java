@@ -59,6 +59,7 @@ public class RecommendedAdapter extends RecyclerView.Adapter<RecommendedAdapter.
                     Intent intent = new Intent(context, DetailActivity.class);
                     intent.putExtra("object", items.get(position)); // Truyền dữ liệu item sang DetailActivity
                     context.startActivity(intent);
+
          //       }
             }
         });

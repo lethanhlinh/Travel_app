@@ -79,12 +79,16 @@ public class TicketActivity extends BaseActivity {
             public void onClick(View v) {
                 captureLayoutAsImage();
                 addHistory(object);
-                addPointsUser(5);
+                addPointsUser(5.0);
             }
         });
     }
 
     private void addPointsUser(double point) {
+        if (user == null) {
+            Toast.makeText(TicketActivity.this, "User không tồn tại", Toast.LENGTH_SHORT).show();
+            return; // Dừng hàm nếu user null
+        }
         // Lấy userKey bằng Callback
         user.setPoint(user.getPoint() + point);
         getUserKey(user, new UserCallback() {

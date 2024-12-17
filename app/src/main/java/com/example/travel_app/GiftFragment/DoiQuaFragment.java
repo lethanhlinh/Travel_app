@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.travel_app.Adapter.CategoryAdapter;
 import com.example.travel_app.Adapter.GiftDoiQuaAdapter;
+import com.example.travel_app.Adapter.GiftDoiQuaSecondAdapter;
 import com.example.travel_app.Adapter.RecommendedAdapter;
 import com.example.travel_app.Domain.Category;
 import com.example.travel_app.Domain.Gift;
@@ -84,7 +85,7 @@ public class DoiQuaFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentDoiQuaBinding.inflate(inflater, container, false);
         initGift();
-        initRecommended();
+        initGiftSecond();
         return binding.getRoot();
     }
 
@@ -116,7 +117,7 @@ public class DoiQuaFragment extends Fragment {
         });
     }
 
-    private void initRecommended() {
+    private void initGiftSecond() {
         DatabaseReference myRef = database.getReference("Gift");
         // binding.progressBarRecommended.setVisibility(View.VISIBLE);
 
@@ -131,7 +132,7 @@ public class DoiQuaFragment extends Fragment {
                     }
                     if (!lists.isEmpty()) {
                         binding.recycleViewPresent.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-                        RecyclerView.Adapter adapter = new GiftDoiQuaAdapter(lists);
+                        RecyclerView.Adapter adapter = new GiftDoiQuaSecondAdapter(lists);
                         binding.recycleViewPresent.setAdapter(adapter);
                     }
                        binding.progressBarPresent.setVisibility(View.GONE);
