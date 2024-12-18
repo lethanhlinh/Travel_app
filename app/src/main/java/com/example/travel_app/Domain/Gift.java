@@ -10,6 +10,7 @@ public class Gift implements Serializable {
     private String ExpireDate;
     private String GiftCode;
     private String Pic;
+    private double subPoint;
 
 
 
@@ -59,5 +60,11 @@ public class Gift implements Serializable {
 
     public void setCreatedDate(String createdDate) {
         CreatedDate = createdDate;
+    }
+    public double getSubPoint() {
+        return subPoint;
+    }
+    public void setSubPoint(double subPoint) {
+        this.subPoint = subPoint;
     }
 }

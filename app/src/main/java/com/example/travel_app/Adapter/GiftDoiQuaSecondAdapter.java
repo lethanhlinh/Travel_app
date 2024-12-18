@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Activity.GiftDetailActivity;
 import com.example.travel_app.Domain.Gift;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.databinding.ViewholderDoiquaBinding;
 import com.example.travel_app.databinding.ViewholderDoiquasecondBinding;
 
@@ -21,8 +22,10 @@ public class GiftDoiQuaSecondAdapter extends RecyclerView.Adapter<GiftDoiQuaSeco
     ArrayList<Gift> items;
     Context context;
     ViewholderDoiquasecondBinding binding;
-    public GiftDoiQuaSecondAdapter(ArrayList<Gift> items) {
+    private User user;
+    public GiftDoiQuaSecondAdapter(ArrayList<Gift> items, User user) {
         this.items = items;
+        this.user = user;
     }
 
     @NonNull
@@ -49,6 +52,7 @@ public class GiftDoiQuaSecondAdapter extends RecyclerView.Adapter<GiftDoiQuaSeco
             public void onClick(View v) {
                 Intent intent = new Intent(context, GiftDetailActivity.class);
                 intent.putExtra("object", items.get(position)); // Truyền dữ liệu item sang DetailActivity
+                intent.putExtra("user", user); // Truyền dữ liệu user sang DetailActivity")
                 context.startActivity(intent);
             }
         });

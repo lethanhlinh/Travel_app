@@ -15,6 +15,7 @@ import androidx.core.graphics.drawable.DrawableCompat;
 import com.bumptech.glide.Glide;
 import com.example.travel_app.Domain.Gift;
 import com.example.travel_app.Domain.ItemDomain;
+import com.example.travel_app.Domain.User;
 import com.example.travel_app.R;
 import com.example.travel_app.databinding.ActivityDetailBinding;
 import com.example.travel_app.databinding.ActivityGiftDetailBinding;
@@ -24,7 +25,7 @@ import com.google.gson.Gson;
 public class GiftDetailActivity extends BaseActivity {
     ActivityGiftDetailBinding binding;
     private Gift object;
-
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class GiftDetailActivity extends BaseActivity {
 
     private void setVariable() {
         binding.titleTxt.setText(object.getGiftCode());
-        binding.priceTxt.setText(object.getCoupon());
+        binding.priceTxt.setText(String.valueOf(object.getSubPoint()));
         binding.backBtn.setOnClickListener(v -> finish());
 
         binding.durationTxt.setText(object.getExpireDate());
@@ -54,6 +55,7 @@ public class GiftDetailActivity extends BaseActivity {
         binding.addToCartBtn.setOnClickListener(view -> {
             Intent intent = new Intent(GiftDetailActivity.this, GiftTicketActivity.class);
             intent.putExtra("object", object);
+            intent.putExtra("user", user);
             startActivity(intent);
         });
 
@@ -64,5 +66,6 @@ public class GiftDetailActivity extends BaseActivity {
 
     private void getIntentExtra() {
         object = (Gift) getIntent().getSerializableExtra("object");
+        user = (User) getIntent().getSerializableExtra("user");
     }
 }

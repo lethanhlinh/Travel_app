@@ -112,7 +112,7 @@ public class DoiQuaFragment extends Fragment {
                     }
                     if (!lists.isEmpty()) {
                         binding.recyclerViewExchangeGifts.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-                        RecyclerView.Adapter adapter = new GiftDoiQuaAdapter(lists);
+                        RecyclerView.Adapter adapter = new GiftDoiQuaAdapter(lists,user);
                         binding.recyclerViewExchangeGifts.setAdapter(adapter);
                     }
                     binding.progressBarExchangeGifts.setVisibility(View.GONE);
@@ -141,7 +141,8 @@ public class DoiQuaFragment extends Fragment {
                     }
                     if (!lists.isEmpty()) {
                         binding.recycleViewPresent.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
-                        RecyclerView.Adapter adapter = new GiftDoiQuaSecondAdapter(lists);
+                        RecyclerView.Adapter adapter = new GiftDoiQuaSecondAdapter(lists, user);
+
                         binding.recycleViewPresent.setAdapter(adapter);
                     }
                        binding.progressBarPresent.setVisibility(View.GONE);
